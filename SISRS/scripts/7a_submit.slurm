@@ -18,4 +18,4 @@ module load BEDTools/2.30.0-GCC-10.2.0
 module load Biopython/1.78-foss-2020b
 
 
-python3 /data/schwartzlab/eren/Chapter1/SISRS/scripts/sisrs_07_a_contigs_processing.py -trh 32 -dir /data/schwartzlab/eren/Chapter1/SISRS_Run
+python3 /data/schwartzlab/eren/Chapter1/SISRS/scripts/sisrs_07_a_contigs_processing.py -trh 32 -dir /data/schwartzlab/eren/Chapter1
