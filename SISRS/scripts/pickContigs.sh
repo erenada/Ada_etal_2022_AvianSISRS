@@ -5,6 +5,8 @@
 
 # sort
 
+#cut -d'/' -f 1 alignment_locs_m0_nogap.txt | uniq -c | sort -bgr | sed 's/[[:space:]]//' > M_0_sorted_frequencies.csv
+
 #cut -d'/' -f 1 alignment_locs_m5_nogap.txt | uniq -c | sort -bgr | sed 's/[[:space:]]//' > M_5_sorted_frequencies.csv
 
 # copy
