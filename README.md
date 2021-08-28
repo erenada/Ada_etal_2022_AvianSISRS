@@ -3,3 +3,8 @@
 This repo contains scripts and supplementary files for Ada et al. 2021
 
 
+
+
+# annotation
+
+Reference genome:
