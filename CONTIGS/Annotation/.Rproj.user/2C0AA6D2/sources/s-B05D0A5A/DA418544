@@ -3,7 +3,7 @@
     "path": "~/Documents/GitHub/Chapter1/CONTIGS/Annotation/scoring.R",
     "project_path": "scoring.R",
     "type": "r_source",
-    "hash": "0",
+    "hash": "1466187777",
     "contents": "",
     "dirty": false,
     "created": 1630344052041.0,
@@ -11,15 +11,15 @@
     "relative_order": 1,
     "properties": {
         "tempName": "Untitled1",
-        "cursorPosition": "10,0",
-        "scrollLine": "1"
+        "cursorPosition": "38,0",
+        "scrollLine": "22"
     },
     "folds": "",
-    "lastKnownWriteTime": 1630346531,
+    "lastKnownWriteTime": 1630347686,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1630346531534,
+    "last_content_update": 1630347686921,
     "read_only": false,
     "read_only_alternatives": []
 }

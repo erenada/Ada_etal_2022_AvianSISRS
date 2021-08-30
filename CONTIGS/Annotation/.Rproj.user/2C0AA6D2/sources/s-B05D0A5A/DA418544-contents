@@ -17,4 +17,26 @@ annot_table[1:10,]
 
 write.table(annot_table, file = "annot_table.csv", sep = "\t", quote = FALSE, row.names = F)
 
+CDS_table <- subset(annot_table, Locus_type == "CDS")
+lnc_RNA_table <- subset(annot_table, Locus_type == "lnc_RNA")
+other_table <- subset(annot_table, Locus_type == "other")
+pseudogene_table <- subset(annot_table, Locus_type == "pseudogene")
+unannotated_table <- subset(annot_table, Locus_type == "unannotated")
+UTR_table <- subset(annot_table, Locus_type == "UTR")
+
+
+write.table(CDS_table, file = "CDS_table.csv", sep = "\t", quote = FALSE, row.names = F)
+
+write.table(lnc_RNA_table, file = "lnc_RNA_table.csv", sep = "\t", quote = FALSE, row.names = F)
+
+write.table(other_table, file = "other_table.csv", sep = "\t", quote = FALSE, row.names = F)
+
+write.table(pseudogene_table, file = "pseudogene_table.csv", sep = "\t", quote = FALSE, row.names = F)
+
+write.table(unannotated_table, file = "unannotated_table.csv", sep = "\t", quote = FALSE, row.names = F)
+
+write.table(UTR_table, file = "UTR_table.csv", sep = "\t", quote = FALSE, row.names = F)
+
+
+
 
