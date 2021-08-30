@@ -1,9 +1,9 @@
 #!/bin/bash
 #SBATCH --job-name="7b"
-#SBATCH --time=2:00:00  # walltime limit (HH:MM:SS)
+#SBATCH --time=120:00:00  # walltime limit (HH:MM:SS)
 #SBATCH --nodes=1   # number of nodes
 #SBATCH --ntasks-per-node=20   # processor core(s) per node
-#SBATCH --mail-user="yana_hrytsenko@uri.edu"
+#SBATCH --mail-user="erenadao@uri.edu"
 #SBATCH --mail-type=END,FAIL
 
 cd $SLURM_SUBMIT_DIR
@@ -25,5 +25,5 @@ ARRLEN=${#FILELIST[@]}
 for (( i = 0; i < $ARRLEN; i++ ))
 do
   out_file="$(basename ${FILELIST[i]})" # contig file
-  mafft --auto --thread $THR ${FILELIST[i]} > $PTH_OUT${out_file}
+  mafft --nwildcard --auto --thread $THR ${FILELIST[i]} > $PTH_OUT${out_file}
 done
