@@ -1,7 +1,6 @@
 # scoring the annotations 
 
-annotations <- read.csv("./annotations.csv")
-
+annotations <- read.csv("./annot.csv")
 
 annot_table_pre <- read.csv("./annotations.csv", header = T, stringsAsFactors = F)
 
@@ -15,7 +14,7 @@ annot_table$Alignment_name <- paste0(annot_table$Alignment_name, ".fasta")
 
 annot_table[1:10,]
 
-write.table(annot_table, file = "annot_table.csv", sep = "\t", quote = FALSE, row.names = F)
+write.table(annot_table, file = "annot.csv", sep = "\t", quote = FALSE, row.names = F)
 
 CDS_table <- subset(annot_table, Locus_type == "CDS")
 lnc_RNA_table <- subset(annot_table, Locus_type == "lnc_RNA")
@@ -23,7 +22,7 @@ other_table <- subset(annot_table, Locus_type == "other")
 pseudogene_table <- subset(annot_table, Locus_type == "pseudogene")
 unannotated_table <- subset(annot_table, Locus_type == "unannotated")
 UTR_table <- subset(annot_table, Locus_type == "UTR")
-
+intron_table <- subset(annot_table, Locus_type == "intron")
 
 write.table(CDS_table, file = "CDS_table.csv", sep = "\t", quote = FALSE, row.names = F)
 
@@ -37,6 +36,4 @@ write.table(unannotated_table, file = "unannotated_table.csv", sep = "\t", quote
 
 write.table(UTR_table, file = "UTR_table.csv", sep = "\t", quote = FALSE, row.names = F)
 
-
-
-
+write.table(intron_table, file = "intron_table.csv", sep = "\t", quote = FALSE, row.names = F)
