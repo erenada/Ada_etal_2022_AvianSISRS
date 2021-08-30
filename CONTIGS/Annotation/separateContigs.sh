@@ -1,6 +1,6 @@
 #!/bin/bash
 
-listOfData=$(tail -n +2 annot_table.csv | cut -f 2 | sort | uniq)
+listOfData=$(tail -n +2 annot.csv | cut -f 2 | sort | uniq)
 
 for type in $listOfData;
 do
