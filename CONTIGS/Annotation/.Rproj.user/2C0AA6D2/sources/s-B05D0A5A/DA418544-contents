@@ -15,6 +15,6 @@ annot_table$Alignment_name <- paste0(annot_table$Alignment_name, ".fasta")
 
 annot_table[1:10,]
 
-write.table(annot_table, file = "annot_table.csv", sep = "\t")
+write.table(annot_table, file = "annot_table.csv", sep = "\t", quote = FALSE)
 
 
