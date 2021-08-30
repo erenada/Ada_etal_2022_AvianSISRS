@@ -1,0 +1,32 @@
+{
+    "id": "B5446617",
+    "path": null,
+    "project_path": null,
+    "type": "r_dataframe",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1630344993605.0,
+    "source_on_save": false,
+    "relative_order": 4,
+    "properties": {
+        "expression": "annot_table_pre",
+        "caption": "annot_table_pre",
+        "totalObservations": "120758",
+        "displayedObservations": "120758",
+        "variables": "8",
+        "cacheKey": "433AD376",
+        "object": "annot_table_pre",
+        "environment": "",
+        "contentUrl": "grid_resource/gridviewer.html?env=&obj=annot_table_pre&cache_key=433AD376&max_cols=50",
+        "preview": "0"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 4512619760,
+    "encoding": "",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1630344993605,
+    "read_only": false,
+    "read_only_alternatives": []
+}
