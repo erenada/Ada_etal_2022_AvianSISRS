@@ -1,5 +1,6 @@
 #!/bin/bash
 
+cd /data/schwartzlab/eren/Chapter1/CONTIGS/Annotation
 
 listOfData=$(cat annot.csv | tail -n +2 | cut -f 2 | sort | uniq)
 
