@@ -1,1 +1,12 @@
 #get started here
+
+#Calculating site concordance factor (sCF) for the bird data
+
+# alignFolder= "/data/schwartzlab/eren/Chapter1/Concord_Analyses/alignments/"
+
+# RefTreeFolder= "/data/schwartzlab/eren/Chapter1/Concord_Analyses/ReferenceTrees/"
+
+
+# run scf for Jarvis tree using SISRS final alignment
+
+iqtree -t $RefTreeFolder/JarvisFinalTree.nwk -s ALN_FILE --scf 100 --prefix concord -T 10
