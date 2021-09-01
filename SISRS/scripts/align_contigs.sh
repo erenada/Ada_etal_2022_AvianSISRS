@@ -4,7 +4,7 @@
 #SBATCH --nodes=1   # number of nodes
 #SBATCH --ntasks-per-node=20   # processor core(s) per node
 #SBATCH --mail-user="erenada@uri.edu"
-#SBATCH --mail-type=ALL
+#SBATCH --mail-type=END,FAIL
 
 cd $SLURM_SUBMIT_DIR
 
