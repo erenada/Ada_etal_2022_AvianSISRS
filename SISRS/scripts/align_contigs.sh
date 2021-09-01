@@ -3,8 +3,8 @@
 #SBATCH --time=120:00:00  # walltime limit (HH:MM:SS)
 #SBATCH --nodes=1   # number of nodes
 #SBATCH --ntasks-per-node=20   # processor core(s) per node
-#SBATCH --mail-user="erenadao@uri.edu"
-#SBATCH --mail-type=END,FAIL
+#SBATCH --mail-user="erenada@uri.edu"
+#SBATCH --mail-type=ALL
 
 cd $SLURM_SUBMIT_DIR
 
