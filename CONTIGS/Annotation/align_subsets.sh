@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name="align_subsets"
+#SBATCH --job-name="align_subsets_1"
 #SBATCH --time=99:00:00  # walltime limit (HH:MM:SS)
 #SBATCH --nodes=1   # number of nodes
 #SBATCH --ntasks-per-node=20   # CHANGE THIS to processor core(s) per node
