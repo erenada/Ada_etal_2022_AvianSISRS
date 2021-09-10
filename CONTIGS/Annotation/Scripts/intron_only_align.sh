@@ -21,7 +21,7 @@ PTH_OUT=/data/schwartzlab/eren/Chapter1/CONTIGS/Annotation/ALIGNED
 
 for type in $listOfData;
 do
-FILELIST=$(ls ${PTH}/${type}/*.fasta)
+FILELIST=$(ls ${PTH}/${type})
 for infile in ${FILELIST};
 do
   out_file=$(basename ${infile})
