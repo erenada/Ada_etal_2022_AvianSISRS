@@ -16,8 +16,8 @@ module load MAFFT/7.475-gompi-2020b-with-extensions
 
 
 listOfData=$(cat /data/schwartzlab/eren/Chapter1/CONTIGS/Annotation/Tables/annot_table_all.csv | tail -n +2 | cut -f 2 | sort | uniq | grep intron)
-PTH=$(/data/schwartzlab/eren/Chapter1/CONTIGS/Annotation/NOT_ALIGNED)
-PTH_OUT=$(/data/schwartzlab/eren/Chapter1/CONTIGS/Annotation/ALIGNED)
+PTH=/data/schwartzlab/eren/Chapter1/CONTIGS/Annotation/NOT_ALIGNED
+PTH_OUT=/data/schwartzlab/eren/Chapter1/CONTIGS/Annotation/ALIGNED
 
 for type in $listOfData;
 do
