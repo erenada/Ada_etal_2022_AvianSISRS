@@ -19,7 +19,7 @@ type=$(cat /data/schwartzlab/eren/Chapter1/CONTIGS/Annotation/Tables/annot_table
 PTH=(/data/schwartzlab/eren/Chapter1/CONTIGS/Annotation/NOT_ALIGNED)
 PTH_OUT=(/data/schwartzlab/eren/Chapter1/CONTIGS/Annotation/ALIGNED)
 
-for file in $(ls $PTH/${type});
+for file in $(ls $PTH/${type}/*.fasta);
 do
   out_file=$(basename ${file})
   mafft --nwildcard --auto --thread 20 ${file} > ${PTH_OUT}/${type}/${out_file}
