@@ -27,9 +27,9 @@ PTH_OUT=(/data/schwartzlab/eren/Chapter1/CONTIGS/Annotation/CONCAT)
 for type in $listOfData;
 do
   mkdir ${PTH_OUT}/${type}
-  cp /data/schwartzlab/eren/Chapter1/CONTIGS/Annotation/Scripts/AMAS_ch1.py ${PTH}/${type}
-  python3 ${PTH}/${type}/AMAS.py concat -f fasta -d dna -i *fasta -c 20
-  rm ${PTH}/${type}/AMAS.py
+  cp /data/schwartzlab/eren/Chapter1/CONTIGS/Annotation/Scripts/AMAS_ch1.py ${PTH}/${type}/AMAS_ch1.py
+  python3 ${PTH}/${type}/AMAS_ch1.py concat -f fasta -d dna -i *fasta -c 20
+  rm ${PTH}/${type}/AMAS_ch1.py
   mv ${PTH}/${type}/concatenated.out ${PTH_OUT}/${type}/"${type}"_concatenated.fasta
   mv ${PTH}/${type}/partitions.txt ${PTH_OUT}/${type}/"${type}"_partitions.txt
 done
