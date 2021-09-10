@@ -15,16 +15,12 @@
 module load MAFFT/7.475-gompi-2020b-with-extensions
 
 
-listOfData=$(cat /data/schwartzlab/eren/Chapter1/CONTIGS/Annotation/Tables/annot_table_all.csv | tail -n +2 | cut -f 2 | sort | uniq | grep intron)
-PTH=/data/schwartzlab/eren/Chapter1/CONTIGS/Annotation/NOT_ALIGNED
-PTH_OUT=/data/schwartzlab/eren/Chapter1/CONTIGS/Annotation/ALIGNED
+type=$(cat /data/schwartzlab/eren/Chapter1/CONTIGS/Annotation/Tables/annot_table_all.csv | tail -n +2 | cut -f 2 | sort | uniq | grep intron)
+PTH=(/data/schwartzlab/eren/Chapter1/CONTIGS/Annotation/NOT_ALIGNED)
+PTH_OUT=(/data/schwartzlab/eren/Chapter1/CONTIGS/Annotation/ALIGNED)
 
-for type in $listOfData;
+for file in $(ls $PTH/${type});
 do
-FILELIST=$(ls ${PTH}/${type})
-for infile in ${FILELIST};
-do
-  out_file=$(basename ${infile})
-  mafft --nwildcard --auto --thread 20 ${infile} > ${PTH_OUT}/${type}/${out_file}
-done
+  out_file=$(basename ${file})
+  mafft --nwildcard --auto --thread 20 ${file} > ${PTH_OUT}/${type}/${out_file}
 done
