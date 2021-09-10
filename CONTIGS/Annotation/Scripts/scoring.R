@@ -1,6 +1,8 @@
-# scoring the annotations
+# scoring the annotations 
 
-annot_table_pre <- read.csv("./annotations.csv", header = T, stringsAsFactors = F)
+annotations <- read.csv("Tables/annotations.csv")
+
+annot_table_pre <- read.csv("Tables/annotations.csv", header = T, stringsAsFactors = F)
 
 annot_table_pre[1:10,]
 
