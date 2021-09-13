@@ -18,15 +18,15 @@ module purge
 
 module load Python/3.7.4-GCCcore-8.3.0
 
-listOfData=$(cat ../Tables/annot_table_all.csv | tail -n +2 | cut -f 2 | sort | uniq)
+listOfData=$(cat ../Tables/annot_table_all.csv | tail -n +2 | cut -f 2 | sort | uniq | grep "unannotated\|UTR")
 
 PTH=(/data/schwartzlab/eren/Chapter1/CONTIGS/Annotation/ALIGNED)
 PTH_OUT=(/data/schwartzlab/eren/Chapter1/CONTIGS/Annotation/CONCAT)
 
-for type in $listOfData;
-do
-  mkdir ${PTH_OUT}/${type}
-done
+#for type in $listOfData;
+#do
+#  mkdir ${PTH_OUT}/${type}
+#done
 
 
 for type in $listOfData;
