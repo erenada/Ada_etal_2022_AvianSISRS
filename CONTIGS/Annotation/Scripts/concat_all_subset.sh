@@ -18,7 +18,7 @@ module purge
 
 module load Python/3.7.4-GCCcore-8.3.0
 
-listOfData=$(cat ../Tables/annot_table_all.csv | tail -n +2 | cut -f 2 | sort | uniq | grep "unannotated\|UTR")
+listOfData=$(cat ../Tables/annot_table_all.csv | tail -n +2 | cut -f 2 | sort | uniq)
 
 PTH=(/data/schwartzlab/eren/Chapter1/CONTIGS/Annotation/ALIGNED)
 PTH_OUT=(/data/schwartzlab/eren/Chapter1/CONTIGS/Annotation/CONCAT)
@@ -33,7 +33,7 @@ for type in $listOfData;
 do
   cp /data/schwartzlab/eren/Chapter1/CONTIGS/Annotation/Scripts/AMAS_ch1.py ${PTH}/${type}/AMAS_ch1.py
   cd ${PTH}/${type}
-  python3 AMAS_ch1.py concat -f fasta -d dna -i *fasta -c 20
+  python3 AMAS_ch1.py concat -f fasta -d dna -i *fasta -c 20 --part-format raxml
   mv ${PTH}/${type}/concatenated.out ${PTH_OUT}/${type}/"${type}"_concatenated.fasta
   mv ${PTH}/${type}/partitions.txt ${PTH_OUT}/${type}/"${type}"_partitions.txt
   cd
