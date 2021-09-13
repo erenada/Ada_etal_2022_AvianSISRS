@@ -27,7 +27,7 @@ cd $PTH
 
 cp /data/schwartzlab/eren/Chapter1/CONTIGS/Annotation/Scripts/AMAS_ch1.py AMAS_ch1.py
 
-fileList=$(find /data/schwartzlab/eren/Chapter1/SISRS_Run/aligned_contigs -type f -name "*.fasta" -print0 | xargs -0 -n 10)
+fileList=$(find -type f -name "*.fasta" -print0 | xargs -0 -n 10)
 
 python3 AMAS_ch1.py concat -f fasta -d dna -i ${fileList} -c 20 --part-format raxml
 
