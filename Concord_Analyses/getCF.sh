@@ -15,7 +15,7 @@
 
 module purge
 
-module load 
+module load IQ-TREE/2.1.2-foss-2020a
 
 ALN_DIR=$(/data/schwartzlab/eren/Chapter1/CONTIGS/Annotation/ALIGNED)
 
