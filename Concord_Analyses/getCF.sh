@@ -21,6 +21,7 @@ ALN_DIR=$(/data/schwartzlab/eren/Chapter1/CONTIGS/Annotation/ALIGNED)
 
 REF_TREE=$(/data/schwartzlab/eren/Chapter1/Concord_Analyses/ReferenceTrees)
 
+cd $ALN_DIR
 
 for type in $(ls $ALN_DIR);
 do
