@@ -27,7 +27,7 @@ cd $PTH
 
 cp /data/schwartzlab/eren/Chapter1/CONTIGS/Annotation/Scripts/AMAS_ch1.py AMAS_ch1.py
 
-find . -type f -name '*.fasta' | \parallel -N1000 'python3 AMAS_ch1.py concat -f fasta -d dna -i '"{}"' ? tmp.'"{#}"'.conc'
+find . -type f -name '*.fasta' | \parallel -N1000 'python3 AMAS_ch1.py concat -f fasta -d dna -i '"{}"' > tmp.'"{#}"'.conc'
 
 
 python3 AMAS_ch1.py concat -f fasta -d dna -i tmp.*.conc -c 20 --part-format raxml
