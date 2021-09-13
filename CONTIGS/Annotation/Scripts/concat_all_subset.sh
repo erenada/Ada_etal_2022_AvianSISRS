@@ -23,7 +23,7 @@ listOfData=$(cat ../Tables/annot_table_all.csv | tail -n +2 | cut -f 2 | sort | 
 PTH=(/data/schwartzlab/eren/Chapter1/CONTIGS/Annotation/ALIGNED)
 PTH_OUT=(/data/schwartzlab/eren/Chapter1/CONTIGS/Annotation/CONCAT)
 
-for type $listOfData;
+for type in $listOfData;
 do
   mkdir ${PTH_OUT}/${type}
 done
@@ -36,5 +36,5 @@ do
   python3 ${PTH}/${type}/AMAS_ch1.py concat -f fasta -d dna -i ${PTH}/${type}/*.fasta -c 20
   mv ${PTH}/${type}/concatenated.out ${PTH_OUT}/${type}/"${type}"_concatenated.fasta
   mv ${PTH}/${type}/partitions.txt ${PTH_OUT}/${type}/"${type}"_partitions.txt
-  cd 
+  cd
 done
