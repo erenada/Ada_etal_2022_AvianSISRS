@@ -17,7 +17,7 @@ module purge
 #CHANGE THESE IF NOT ON A URI SYSTEM
 
 module load Python/3.7.4-GCCcore-8.3.0
-
+module load parallel/20190922-GCCcore-8.3.0
 
 PTH=(/data/schwartzlab/eren/Chapter1/SISRS_Run/aligned_contigs)
 PTH_OUT=(/data/schwartzlab/eren/Chapter1/CONTIGS/Annotation/CONCAT/ALL)
