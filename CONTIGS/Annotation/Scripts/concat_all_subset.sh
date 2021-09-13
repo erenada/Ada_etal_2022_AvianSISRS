@@ -39,5 +39,5 @@ do
 
   mv "${type}"_concat.fasta ${PTH_OUT}/${type}/"${type}"_concat.fasta
   mv "${type}"_partition.txt ${PTH_OUT}/${type}/"${type}"_partition.txt
-  cd
+  rm AMAS_ch1.py
 done
