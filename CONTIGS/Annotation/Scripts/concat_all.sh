@@ -27,6 +27,8 @@ cd $PTH
 
 cp /data/schwartzlab/eren/Chapter1/CONTIGS/Annotation/Scripts/AMAS_ch1.py AMAS_ch1.py
 
+getconf ARG_MAX
+
 python3 AMAS_ch1.py concat -f fasta -d dna -i *fasta -c 20
 
 mv ${PTH}/concatenated.out ${PTH_OUT}/all_concatenated.fasta
