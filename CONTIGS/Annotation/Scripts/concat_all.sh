@@ -27,7 +27,7 @@ cp /data/schwartzlab/eren/Chapter1/CONTIGS/Annotation/Scripts/AMAS_ch1.py ${PTH}
 
 cd ${PTH}
 
-python3 AMAS_ch1.py concat -f fasta -d dna -i *fasta -c 20
+python3 ${PTH}/AMAS_ch1.py concat -f fasta -d dna -i *fasta -c 20
 
 mv ${PTH}/concatenated.out ${PTH_OUT}/all_concatenated.fasta
 mv ${PTH}/partitions.txt ${PTH_OUT}/all_partitions.txt
