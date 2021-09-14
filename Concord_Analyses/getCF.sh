@@ -28,6 +28,6 @@ do
   iqtree2-mpi -S ${ALN_DIR}/${type} --prefix "$type"_loci -T AUTO
   for tree in $(ls $REF_TREE);
   do
-    iqtree2-mpi -t ${REF_TREE}/${tree} --gcf ${ALN_DIR}/${type}/"$type"_loci -p ${ALN_DIR}/${type} --scf 100 --prefix "$type"concord -T AUTO
+    iqtree2-mpi -t ${REF_TREE}/${tree} --gcf ${ALN_DIR}/${type}/"$type"_loci -p ${ALN_DIR}/${type} --scf 100 --prefix "$tree"_"$type"_concord -T AUTO
   done
 done
