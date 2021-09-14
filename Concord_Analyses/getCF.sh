@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --job-name="concordValues"
 #SBATCH --time=99:00:00  # walltime limit (HH:MM:SS)
-#SBATCH --nodes=2   # number of nodes
+#SBATCH --nodes=1   # number of nodes
 #SBATCH --ntasks-per-node=20   # CHANGE THIS to processor core(s) per node
 #SBATCH --mail-user="erenada@uri.edu" #CHANGE THIS to your user email address
 #SBATCH --mail-type=END,FAIL
@@ -25,9 +25,9 @@ cd $ALN_DIR
 
 for type in $(ls $ALN_DIR);
 do
-  mpirun -np 2 iqtree-mpi -nt 4 -S ${ALN_DIR}/${type} --prefix "$type"_loci -T AUTO
+  mpirun -np 1 iqtree-mpi -nt 1 -S ${ALN_DIR}/${type} --prefix "$type"_loci -T AUTO
   for tree in $(ls $REF_TREE);
   do
-    mpirun -np 2 iqtree-mpi -nt 4 -t ${REF_TREE}/${tree} --gcf ${ALN_DIR}/${type}/"$type"_loci -p ${ALN_DIR}/${type} --scf 100 --prefix "$type"concord -T 20
+    mpirun -np 1 iqtree-mpi -nt 1 -t ${REF_TREE}/${tree} --gcf ${ALN_DIR}/${type}/"$type"_loci -p ${ALN_DIR}/${type} --scf 100 --prefix "$type"concord -T 20
   done
 done
