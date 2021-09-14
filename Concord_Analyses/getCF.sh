@@ -25,9 +25,9 @@ cd $ALN_DIR
 
 for type in $(ls $ALN_DIR);
 do
-  mpirun -np 10 iqtree-mpi -nt 2 -S ${ALN_DIR}/${type} --prefix "$type"_loci -T AUTO
+  mpirun -np 4 iqtree-mpi -nt 2 -S ${ALN_DIR}/${type} --prefix "$type"_loci -T AUTO
   for tree in $(ls $REF_TREE);
   do
-    mpirun -np 10 iqtree-mpi -nt 2 -t ${REF_TREE}/${tree} --gcf ${ALN_DIR}/${type}/"$type"_loci -p ${ALN_DIR}/${type} --scf 100 --prefix "$type"concord -T 20
+    mpirun -np 4 iqtree-mpi -nt 2 -t ${REF_TREE}/${tree} --gcf ${ALN_DIR}/${type}/"$type"_loci -p ${ALN_DIR}/${type} --scf 100 --prefix "$type"concord -T 20
   done
 done
