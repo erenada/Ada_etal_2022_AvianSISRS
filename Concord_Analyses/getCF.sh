@@ -25,9 +25,9 @@ cd $ALN_DIR
 
 for type in $(ls $ALN_DIR);
 do
-  iqtree2-mpi -S ${ALN_DIR}/${type} --prefix "$type"_loci -T AUTO
+  iqtree2 -S ${ALN_DIR}/${type} --prefix "$type"_loci -nt 10
   for tree in $(ls $REF_TREE);
   do
-    iqtree2-mpi -t ${REF_TREE}/${tree} --gcf ${ALN_DIR}/"$type"_loci.treefile -p ${ALN_DIR}/${type} --scf 100 --prefix "$tree"_"$type"_concord -T AUTO
+    iqtree2 -t ${REF_TREE}/${tree} --gcf ${ALN_DIR}/"$type"_loci.treefile -p ${ALN_DIR}/${type} --scf 100 --prefix "$tree"_"$type"_concord -nt 10
   done
 done
