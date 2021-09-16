@@ -18,9 +18,3 @@ done
 
 rm *_temp.sh
 rm Template.sh
-
-cd /data/schwartzlab/eren/Chapter1/Concord_Analyses/
-
-sbatch "${type}"_locusRun.sh
-
-done
