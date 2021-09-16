@@ -13,6 +13,8 @@
 
 ## Calculating gene/locus trees
 
+set environment MALLOC_CHECK_ 2
+
 module purge
 
 module load IQ-TREE/2.1.2-foss-2020a
