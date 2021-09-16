@@ -22,4 +22,5 @@ ALN_DIR=/data/schwartzlab/eren/Chapter1/CONTIGS/Annotation/ALIGNED
 REF_TREE=/data/schwartzlab/eren/Chapter1/Concord_Analyses/ReferenceTrees
 
 cd $ALN_DIR
+
 iqtree2 -S /data/schwartzlab/eren/Chapter1/CONTIGS/Annotation/ALIGNED/intron/ --prefix intron_loci -nt 24
