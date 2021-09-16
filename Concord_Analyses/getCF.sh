@@ -23,11 +23,16 @@ REF_TREE=/data/schwartzlab/eren/Chapter1/Concord_Analyses/ReferenceTrees
 
 cd $ALN_DIR
 
+#inferring locus trees
+
 for type in $(ls -d */ | sed -e "s/\///g");
 do
   iqtree2 -S ${ALN_DIR}/${type}/ --prefix "${type}"_loci -nt 24
-  for tree in $(ls $REF_TREE)
-  do
-    iqtree2 -t ${REF_TREE}/${tree} --gcf "${ALN_DIR}"/"${type}"_loci.treefile -p ${ALN_DIR}/${type}/ --scf 100 --prefix "$tree"_"$type"_concord -nt 24
-  done
+done
+
+#putting all together
+
+for tree in $(ls $REF_TREE);
+do
+iqtree2 -t ${REF_TREE}/${tree} --gcf "${ALN_DIR}"/"${type}"_loci.treefile -p ${ALN_DIR}/${type}/ --scf 100 --prefix "$tree"_"$type"_concord -nt 24
 done
