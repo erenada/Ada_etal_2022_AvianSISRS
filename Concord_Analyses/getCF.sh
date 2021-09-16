@@ -23,7 +23,7 @@ REF_TREE=/data/schwartzlab/eren/Chapter1/Concord_Analyses/ReferenceTrees
 
 cd $ALN_DIR
 
-for type in $(ls $ALN_DIR);
+for type in $(ls -d */ | sed -e "s/\///g");
 do
   iqtree2 -S ${ALN_DIR}/${type} --prefix "$type"_loci -nt 24
   for tree in $(ls $REF_TREE)
