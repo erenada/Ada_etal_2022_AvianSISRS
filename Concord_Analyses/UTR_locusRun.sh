@@ -5,8 +5,8 @@
 #SBATCH --ntasks-per-node=20   # CHANGE THIS to processor core(s) per node
 #SBATCH --mail-user="erenada@uri.edu" #CHANGE THIS to your user email address
 #SBATCH --mail-type=END,FAIL
-#SBATCH -o %x_%A.out
-#SBATCH -e %x_%A.err
+#SBATCH -o UTR_loci_%A.out
+#SBATCH -e UTR_loci_%A.err
 #SBATCH --exclusive
 
 #get started here
