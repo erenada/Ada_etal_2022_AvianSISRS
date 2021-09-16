@@ -5,8 +5,7 @@ ALN_DIR=/data/schwartzlab/eren/Chapter1/CONTIGS/Annotation/ALIGNED
 
 REF_TREE=/data/schwartzlab/eren/Chapter1/Concord_Analyses/ReferenceTrees
 
-
-cp data/schwartzlab/eren/Chapter1/Concord_Analyses/Template.sh ${ALN_DIR}/Template.sh
+cp /data/schwartzlab/eren/Chapter1/Concord_Analyses/Template.sh ${ALN_DIR}/Template.sh
 
 cd $ALN_DIR
 
