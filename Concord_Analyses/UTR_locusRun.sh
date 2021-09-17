@@ -1,8 +1,8 @@
 #!/bin/bash
 #SBATCH --job-name="concordValues"
 #SBATCH --time=170:00:00  # walltime limit (HH:MM:SS)
-#SBATCH --nodes=2   # number of nodes
-#SBATCH --ntasks-per-node=4  # CHANGE THIS to processor core(s) per node
+#SBATCH --nodes=1   # number of nodes
+#SBATCH --ntasks-per-node=10  # CHANGE THIS to processor core(s) per node
 #SBATCH --mail-user="erenada@uri.edu" #CHANGE THIS to your user email address
 #SBATCH --mail-type=END,FAIL
 #SBATCH -o UTR_loci_%A.out
@@ -34,4 +34,4 @@ REF_TREE=/data/schwartzlab/eren/Chapter1/Concord_Analyses/ReferenceTrees
 
 cd $ALN_DIR
 
-mpirun -np 2 iqtree2-mpi -nt 2 -S /data/schwartzlab/eren/Chapter1/CONTIGS/Annotation/ALIGNED/UTR/ --prefix UTR_loci
+mpirun -np 4 iqtree2-mpi -nt 2 -S /data/schwartzlab/eren/Chapter1/CONTIGS/Annotation/ALIGNED/UTR/ --prefix UTR_loci
