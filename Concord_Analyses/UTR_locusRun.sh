@@ -13,11 +13,17 @@
 
 ## Calculating gene/locus trees
 
-set environment MALLOC_CHECK_ 2
-
 module purge
 
+
+module load GCCcore/10.2.0
+module load GCC/10.2.0
+module load Eigen/3.3.8-GCCcore-10.2.0
+module load CMake/3.18.4-GCCcore-10.2.0
+module load Boost/1.74.0-GCC-10.2.0
+
 module load IQ-TREE/2.1.2-foss-2020a
+
 
 ALN_DIR=/data/schwartzlab/eren/Chapter1/CONTIGS/Annotation/ALIGNED
 
