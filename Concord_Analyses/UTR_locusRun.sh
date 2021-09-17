@@ -14,9 +14,12 @@
 
 ## Calculating gene/locus trees
 
-#module load GCC/9.3.0
-#module load GCCcore/9.3.0
-#module load OpenMPI/4.0.3-GCC-9.3.0
+module purge
+module load GCC/9.3.0
+module load GCCcore/9.3.0
+module load OpenMPI/4.0.3-GCC-9.3.0
+module load IQ-TREE/2.1.2-foss-2020a
+
 
 ALN_DIR=/data/schwartzlab/eren/Chapter1/CONTIGS/Annotation/ALIGNED
 
