@@ -15,8 +15,8 @@
 ## Calculating gene/locus trees
 
 module purge
-module load GCC/9.3.0
-module load GCCcore/9.3.0
+module load GCC/8.3.0
+module load GCCcore/8.3.0
 module load OpenMPI/3.1.4-GCC-8.3.0
 module load CMake/3.15.3-GCCcore-8.3.0
 module load Boost/1.71.0-gompi-2019b
