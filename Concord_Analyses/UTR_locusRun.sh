@@ -18,12 +18,11 @@ module purge
 module load GCC/8.3.0
 module load GCCcore/8.3.0
 module load OpenMPI/3.1.4-GCC-8.3.0
-module load CMake/3.15.3-GCCcore-8.3.0
-module load Boost/1.71.0-gompi-2019b
-module load libGLU/9.0.1-GCCcore-8.3.0
-module load GLib/2.62.0-GCCcore-8.3.0
-module load g2lib/3.1.0-GCCcore-8.3.0
-module load Eigen/3.3.7
+#module load CMake/3.15.3-GCCcore-8.3.0
+#module load libGLU/9.0.1-GCCcore-8.3.0
+#module load GLib/2.62.0-GCCcore-8.3.0
+#module load g2lib/3.1.0-GCCcore-8.3.0
+#module load Eigen/3.3.7
 
 module load IQ-TREE/2.1.2-foss-2020a
 
