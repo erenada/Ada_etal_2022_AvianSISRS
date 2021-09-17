@@ -34,4 +34,4 @@ REF_TREE=/data/schwartzlab/eren/Chapter1/Concord_Analyses/ReferenceTrees
 
 cd $ALN_DIR
 
-mpirun -np 1 iqtree2-mpi -nt 20 -S /data/schwartzlab/eren/Chapter1/CONTIGS/Annotation/ALIGNED/UTR/ --prefix UTR_loci
+mpirun -np 1 iqtree2-mpi -nt 4 -S /data/schwartzlab/eren/Chapter1/CONTIGS/Annotation/ALIGNED/UTR/ --prefix UTR_loci
