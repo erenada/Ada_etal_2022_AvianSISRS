@@ -22,7 +22,10 @@ module purge
 #module load Boost/1.74.0-GCC-10.2.0
 module load GCC/9.3.0
 module load GCCcore/9.3.0
+module load OpenMPI/4.0.3-GCC-9.3.0
+
 module load IQ-TREE/2.1.2-foss-2020a
+
 
 
 ALN_DIR=/data/schwartzlab/eren/Chapter1/CONTIGS/Annotation/ALIGNED
@@ -31,4 +34,4 @@ REF_TREE=/data/schwartzlab/eren/Chapter1/Concord_Analyses/ReferenceTrees
 
 cd $ALN_DIR
 
-iqtree2 -S /data/schwartzlab/eren/Chapter1/CONTIGS/Annotation/ALIGNED/UTR/ --prefix UTR_loci -nt AUTO
+mpirun -np 4 iqtree2-mpi -nt 2 -S /data/schwartzlab/eren/Chapter1/CONTIGS/Annotation/ALIGNED/UTR/ --prefix UTR_loci -nt AUTO
