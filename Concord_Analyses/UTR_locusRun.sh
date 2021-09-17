@@ -8,6 +8,7 @@
 #SBATCH -o UTR_loci_%A.out
 #SBATCH -e UTR_loci_%A.err
 #SBATCH --exclusive
+#SBATCH --mem=64GB
 
 #get started here
 
@@ -26,6 +27,7 @@ module load OpenMPI/4.0.3-GCC-9.3.0
 
 module load IQ-TREE/2.1.2-foss-2020a
 
+$SLURM_CPUS_ON_NODE
 
 
 ALN_DIR=/data/schwartzlab/eren/Chapter1/CONTIGS/Annotation/ALIGNED
@@ -34,4 +36,4 @@ REF_TREE=/data/schwartzlab/eren/Chapter1/Concord_Analyses/ReferenceTrees
 
 cd $ALN_DIR
 
-mpirun -np 20 iqtree2-mpi -nt 1 -S /data/schwartzlab/eren/Chapter1/CONTIGS/Annotation/ALIGNED/UTR/ --prefix UTR_loci
+mpirun -np 1 iqtree2-mpi -nt 20 -S /data/schwartzlab/eren/Chapter1/CONTIGS/Annotation/ALIGNED/UTR/ --prefix UTR_loci -mem 64G
