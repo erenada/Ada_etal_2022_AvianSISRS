@@ -31,5 +31,5 @@ cd $ALN_DIR
 
 for type in $(ls -d */ | sed -e "s/\///g");
 do
-  iqtree2 -t ${REF_TREE}/${tree} --gcf ${ALN_DIR}/${type}_loci.treefile -s ${ALN_DIR}/${type}/${type}_concat.fasta --scf 100 --prefix concord -nt 20
+  /data/schwartzlab/eren/programs/iqtree-2.1.3-Linux/bin/iqtree2 -t ${REF_TREE}/${tree} --gcf ${ALN_DIR}/${type}_loci.treefile -s ${ALN_DIR}/${type}/${type}_concat.fasta --scf 100 --prefix concord -nt 20
 done
