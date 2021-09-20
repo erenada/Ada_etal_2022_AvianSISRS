@@ -1,0 +1,63 @@
+IQ-TREE multicore version 2.1.3 COVID-edition for Linux 64-bit built Apr 21 2021
+Developed by Bui Quang Minh, James Barbetti, Nguyen Lam Tung,
+Olga Chernomor, Heiko Schmidt, Dominik Schrempf, Michael Woodhams.
+
+Host:    n070.cluster.com (AVX512, FMA3, 62 GB RAM)
+Command: /data/schwartzlab/eren/programs/iqtree-2.1.3-Linux/bin/iqtree2 -t /data/schwartzlab/eren/Chapter1/Concord_Analyses/ReferenceTrees/JarvisTree.nwk --gcf /data/schwartzlab/eren/Chapter1/CONTIGS/Annotation/CONCAT/intron_loci.treefile -s /data/schwartzlab/eren/Chapter1/CONTIGS/Annotation/CONCAT/intron/intron_concat.fasta --scf 100 --prefix JarvisTree.nwk_intron_concord -nt 20
+Seed:    391334 (Using SPRNG - Scalable Parallel Random Number Generator)
+Time:    Sat Sep 18 07:38:41 2021
+Kernel:  AVX+FMA - 20 threads (36 CPU cores detected)
+
+Reading alignment file /data/schwartzlab/eren/Chapter1/CONTIGS/Annotation/CONCAT/intron/intron_concat.fasta ... Fasta format detected
+Alignment most likely contains DNA/RNA sequences
+WARNING: 46360 sites contain only gaps or ambiguous characters.
+Alignment has 32 sequences with 8226375 columns, 2850287 distinct patterns
+1615551 parsimony-informative, 2190882 singleton sites, 4419942 constant sites
+        Gap/Ambiguity  Composition  p-value
+   1  AnaPla   21.37%    failed      0.00%
+   2  ApaVit   15.93%    failed      0.00%
+   3  AptFor    8.90%    failed      0.00%
+   4  BalReg   10.24%    failed      0.00%
+   5  BucRhi   16.88%    failed      0.00%
+   6  CarCri   10.23%    failed      0.00%
+   7  ChaPel   16.87%    failed      0.00%
+   8  ChaVoc    9.69%    passed     40.52%
+   9  ChlMac   12.18%    passed     63.37%
+  10  ColLiv   14.73%    passed     76.99%
+  11  ColStr   18.69%    failed      0.00%
+  12  CorBra   19.19%    failed      0.04%
+  13  CucCan   15.95%    failed      0.00%
+  14  EurHel   14.35%    failed      0.00%
+  15  FalPer   12.28%    failed      0.00%
+  16  FulGla    9.24%    failed      0.00%
+  17  GalGal   18.37%    failed      1.87%
+  18  GavSte    9.46%    failed      0.00%
+  19  HalLeu    9.56%    failed      0.00%
+  20  LepDis   10.86%    passed      6.81%
+  21  MelUnd   14.23%    failed      0.00%
+  22  MerNub   16.46%    failed      0.00%
+  23  MesUni   14.26%    failed      0.00%
+  24  OpiHoa   11.31%    failed      0.00%
+  25  PelCri    9.60%    failed      0.00%
+  26  PhaLep   10.52%    failed      0.01%
+  27  PhoRub    9.36%    failed      0.00%
+  28  PicPub   26.08%    failed      0.00%
+  29  PteGut   12.36%    passed     51.64%
+  30  StrCam   28.08%    failed      0.00%
+  31  TauEry   11.28%    failed      0.00%
+  32  TytAlb   11.26%    failed      0.00%
+****  TOTAL    14.06%  27 sequences failed composition chi2 test (p-value<5%; df=3)
+Reading tree /data/schwartzlab/eren/Chapter1/Concord_Analyses/ReferenceTrees/JarvisTree.nwk ...
+rooted tree with 32 taxa and 63 branches
+Reading tree(s) file /data/schwartzlab/eren/Chapter1/CONTIGS/Annotation/CONCAT/intron_loci.treefile ...
+46845 tree(s) loaded (0 rooted and 46845 unrooted)
+Trees have different number of taxa
+Computing gene concordance factor...
+2.988 sec
+Computing site concordance factor...
+27.401 sec
+Tree with concordance factors written to JarvisTree.nwk_intron_concord.cf.tree
+Annotated tree (best viewed in FigTree) written to JarvisTree.nwk_intron_concord.cf.tree.nex
+Tree with branch IDs written to JarvisTree.nwk_intron_concord.cf.branch
+Concordance factors per branch printed to JarvisTree.nwk_intron_concord.cf.stat
+Date and Time: Sat Sep 18 07:39:26 2021
