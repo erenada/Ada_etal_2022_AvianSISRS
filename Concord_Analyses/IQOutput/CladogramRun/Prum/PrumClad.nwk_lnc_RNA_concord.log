@@ -1,0 +1,63 @@
+IQ-TREE multicore version 2.1.3 COVID-edition for Linux 64-bit built Apr 21 2021
+Developed by Bui Quang Minh, James Barbetti, Nguyen Lam Tung,
+Olga Chernomor, Heiko Schmidt, Dominik Schrempf, Michael Woodhams.
+
+Host:    n076.cluster.com (AVX512, FMA3, 125 GB RAM)
+Command: /data/schwartzlab/eren/programs/iqtree-2.1.3-Linux/bin/iqtree2 -t /data/schwartzlab/eren/Chapter1/Concord_Analyses/ReferenceTrees/Cladograms/PrumClad.nwk --gcf /data/schwartzlab/eren/Chapter1/Concord_Analyses/LocusTrees/lnc_RNA_loci.treefile -s /data/schwartzlab/eren/Chapter1/CONTIGS/Annotation/CONCAT/lnc_RNA/lnc_RNA_concat.fasta --scf 100 --prefix PrumClad.nwk_lnc_RNA_concord -nt 20
+Seed:    685476 (Using SPRNG - Scalable Parallel Random Number Generator)
+Time:    Tue Sep 21 14:12:15 2021
+Kernel:  AVX+FMA - 20 threads (36 CPU cores detected)
+
+Reading alignment file /data/schwartzlab/eren/Chapter1/CONTIGS/Annotation/CONCAT/lnc_RNA/lnc_RNA_concat.fasta ... Fasta format detected
+Alignment most likely contains DNA/RNA sequences
+WARNING: 12892 sites contain only gaps or ambiguous characters.
+Alignment has 32 sequences with 2194855 columns, 680475 distinct patterns
+386563 parsimony-informative, 561076 singleton sites, 1247216 constant sites
+        Gap/Ambiguity  Composition  p-value
+   1  AnaPla   14.93%    failed      0.58%
+   2  ApaVit   11.92%    passed     86.31%
+   3  AptFor    6.77%    passed     73.63%
+   4  BalReg    7.49%    passed     20.96%
+   5  BucRhi   12.32%    failed      0.00%
+   6  CarCri    7.68%    failed      0.29%
+   7  ChaPel   13.31%    failed      0.05%
+   8  ChaVoc    7.28%    failed      0.03%
+   9  ChlMac    9.33%    passed     95.12%
+  10  ColLiv   11.41%    passed     34.72%
+  11  ColStr   14.06%    failed      0.00%
+  12  CorBra   14.87%    failed      0.00%
+  13  CucCan   12.16%    failed      0.00%
+  14  EurHel   10.18%    failed      0.00%
+  15  FalPer    9.13%    failed      0.24%
+  16  FulGla    6.97%    passed     57.64%
+  17  GalGal   12.95%    passed     78.49%
+  18  GavSte    7.21%    passed     61.18%
+  19  HalLeu    7.22%    failed      0.19%
+  20  LepDis    7.96%    passed     80.37%
+  21  MelUnd    9.96%    passed     29.77%
+  22  MerNub   12.33%    failed      4.54%
+  23  MesUni   10.61%    passed     95.20%
+  24  OpiHoa    8.49%    failed      0.00%
+  25  PelCri    7.27%    passed      8.94%
+  26  PhaLep    7.97%    passed     68.72%
+  27  PhoRub    6.96%    failed      0.00%
+  28  PicPub   20.08%    failed      0.00%
+  29  PteGut    9.75%    passed     63.95%
+  30  StrCam   19.88%    failed      0.00%
+  31  TauEry    8.20%    passed      7.64%
+  32  TytAlb    8.54%    failed      0.00%
+****  TOTAL    10.47%  17 sequences failed composition chi2 test (p-value<5%; df=3)
+Reading tree /data/schwartzlab/eren/Chapter1/Concord_Analyses/ReferenceTrees/Cladograms/PrumClad.nwk ...
+rooted tree with 32 taxa and 63 branches
+Reading tree(s) file /data/schwartzlab/eren/Chapter1/Concord_Analyses/LocusTrees/lnc_RNA_loci.treefile ...
+12887 tree(s) loaded (0 rooted and 12887 unrooted)
+Trees have different number of taxa
+Computing gene concordance factor...
+0.853 sec
+Computing site concordance factor...
+2.932 sec
+Tree with concordance factors written to PrumClad.nwk_lnc_RNA_concord.cf.tree
+Annotated tree (best viewed in FigTree) written to PrumClad.nwk_lnc_RNA_concord.cf.tree.nex
+Tree with branch IDs written to PrumClad.nwk_lnc_RNA_concord.cf.branch
+Concordance factors per branch printed to PrumClad.nwk_lnc_RNA_concord.cf.stat
+Date and Time: Tue Sep 21 14:12:23 2021
