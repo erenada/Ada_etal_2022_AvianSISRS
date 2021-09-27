@@ -29,5 +29,5 @@ cd $CONTIG_DIR
 for type in $(ls -d *);
 do
   iqtree2 -s ${CONTIG_DIR}/${type}/"${type}"_concat.fasta -p ${CONTIG_DIR}/${type}/"${type}"_partition.txt  --prefix "${type}"_infdtree -B 1000 -T AUTO
-  mv *infdtree
+  mv *infdtree $OUT_DIR/${type}
 done
