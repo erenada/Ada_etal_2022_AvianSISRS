@@ -13,6 +13,8 @@ cd /data/schwartzlab/eren/Chapter1/Concord_Analyses/IQOutput/RBoretumIN
 
 ## Rboretum in Andromeda
 
+module purge
+
 module load Biopython/1.75-foss-2019b-Python-3.7.4
 
 module load R/3.6.2-foss-2019b
