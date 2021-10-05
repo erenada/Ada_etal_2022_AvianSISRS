@@ -15,8 +15,8 @@ cd /data/schwartzlab/eren/Chapter1/Concord_Analyses/IQOutput/RBoretumIN
 
 module purge
 
-module load Biopython/1.75-foss-2019b-Python-3.7.4
+module load Biopython/1.78-foss-2020b
 
-module load R/3.6.2-foss-2019b
+module load R/4.0.3-foss-2020b
 
 Rscript RboretumScript.R
