@@ -1,4 +1,8 @@
 /Users/eren/Documents/GitHub/Chapter1/CONTIGS/concat_samples/
 
-.DS_Store
-.Rproj.user
+*.DS_Store
+*.Rproj
+*.Rproj.user
+*.Rhistory
+*.RData
+*_concat.fasta
