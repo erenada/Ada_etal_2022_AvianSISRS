@@ -1,4 +1,4 @@
-# Birds_SISRS
+## "High levels of conflicting signal in genome-scale coding and non-coding loci support the early rapid cladogenesis hypothesis in Neoaves"
 
 
 This repo contains the scripts and supplementary documents for Ada et al. 2022
