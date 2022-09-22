@@ -18,4 +18,12 @@ Please be aware that the scripts explained below should be run by a SLURM script
 
  - First step to succesfully run SISRS software is to make sure that you have a correct directory structure. This can be done by running SISRS/scripts/sisrs_01_folder_setup.py script (scripts/slurm_submissions/1_submit.slurm) - This script will create a number of folders, including taxon folders in the RawReads, TrimReads, and SISRS_Run folders. In the 1_submit.slurm script, 1) you need to provide a path "-d" that contain folders of fastq.gz; 2) and the path for the output of your analysis "-dir" (which should be your main SISRS folder - for e.g: /home/eren/SISRS/)
 
- -  Then the raw reads 
+ -  Then the raw reads needs to be quality-checked and trimmed. This can be done by running  sisrs_02_read_trimmer.py* script. This script will run FastQC and save the ouptut files in a seperate folder. Script will also run bbduk software to trim adapters.
+ 
+ - In next step, trimmed + quality-checked reads were subsetted for composite genome assembly. Here, this script sisrs_03_read_subsetter.py* requires an approximate size of your genome as an input. In our analyses, we specified this value to 1 Gbp assuming the size of an average bird genome (ranges from ~0.8Gbp to ~1.2Gbp). The script
+will subset each taxons reads down to (10*Y)/X bases (~10X total coverage when summed).
+
+- 
+
+ 
+ - 
