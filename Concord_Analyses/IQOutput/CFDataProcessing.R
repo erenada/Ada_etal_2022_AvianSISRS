@@ -9,23 +9,16 @@ library(entropy)
 library(tidyr)
 library(ape)
 library(phytools)
-
-install.packages("")
-
+library(lemon)
+library(treemap)
 
 # Read the Jarvis Data (later don't forget the change variable names)
 
 JT_CF_CDS <- read.delim("Jarvis/JarvisTree.nwk_CDS_concord.cf.stat", header = T, comment.char = "#")
 
-
 # remove NA's and mutate new variables here
 
-JT_CF_CDS <- JT_CF_CDS %>% select(-(Label)) %>% subset(ID!="34") #%>% mutate(TotalSN)
-
-sum(JT_CF_CDS$sN)
-
-sum(JT_CF_CDS$sDF1_N) + sum(JT_CF_CDS$sDF2_N2)
-
+#JT_CF_CDS <- JT_CF_CDS %>% select(-(Label)) %>% subset(ID!="34") #%>% mutate(TotalSN)
 
 JT_CF_UTR <- read.delim("Jarvis/JarvisTree.nwk_UTR_concord.cf.stat", header = T, comment.char = "#")
 
@@ -64,30 +57,69 @@ ALL_JT_CF_merged <-  bind_rows("CDS" = JT_CF_CDS, "intron" = JT_CF_intron, "UTR"
                         "lnc_RNA" =  JT_CF_lnc_RNA, "pseudogene" = JT_CF_pseudogene, "other" = JT_CF_other,
                         .id = "Data_Type") %>% select(-(Label)) %>% subset(ID!="34")
 
+#subset pseudogene data since it is very short
+
 ALL_JT_CF_merged <- ALL_JT_CF_merged %>% subset(Data_Type!="pseudogene")
-
-
-
-
-
-
-#ALLJT_CF_merged$Data_Type <- factor(ALLJT_CF_merged$Data_Type)
-
 
 
 # Merge ALL Prum Data
 
-# ALL_PT_CF_merged <-  bind_rows("CDS" = PT_CF_CDS, "intron" = PT_CF_intron, "UTR" = PT_CF_UTR, "unannotated" = PT_CF_unannotated,
-#                               "lnc_RNA" =  PT_CF_lnc_RNA, "pseudogene" = PT_CF_pseudogene, "other" = PT_CF_other,
-#                               .id = "Data_Type") %>% select(-(Label)) %>% subset(ID!="34")
+ALL_PT_CF_merged <-  bind_rows("CDS" = PT_CF_CDS, "intron" = PT_CF_intron, "UTR" = PT_CF_UTR, "unannotated" = PT_CF_unannotated,
+                               "lnc_RNA" =  PT_CF_lnc_RNA, "pseudogene" = PT_CF_pseudogene, "other" = PT_CF_other,
+                               .id = "Data_Type") %>% select(-(Label)) %>% subset(ID!="34")
 
+#subset pseudogene data since it is very short
 
-
+ALL_PT_CF_merged <- ALL_PT_CF_merged %>% subset(Data_Type!="pseudogene")
+  
+#ALLJT_CF_merged$Data_Type <- factor(ALLJT_CF_merged$Data_Type)
 
 
 #check if any NA's left
+
 apply(ALL_JT_CF_merged, 2, function(x) any(is.na(x)))
 
+
+apply(ALL_PT_CF_merged, 2, function(x) any(is.na(x)))
+
+
+## seperate the conflicts ---- for Jarvis et al. only! 10/05/21
+
+JT_Galloanseres <- filter(ALL_JT_CF_merged, ID=="35") # galloanseres as control "H0"
+
+JT_Columbea <- filter(ALL_JT_CF_merged, ID=="36") #columbaves split "H1"
+
+JT_Caprimulgiformes <- filter(ALL_JT_CF_merged, ID=="40") #swift split "H2"
+
+JT_Gruiformes <- filter(ALL_JT_CF_merged, ID=="44") #Crane family (inc. hoatzin, split "H3")
+
+JT_Aequornithia <- filter(ALL_JT_CF_merged, ID=="47") #Core water birds "H4"
+
+JT_Telluraves <- filter(ALL_JT_CF_merged, ID=="53") #Core land birds "H5"
+
+JT_ListofJarvisSplits <- c("Galloanseres", "Columbea", "Caprimulgiformes", "Gruiformes", "Aequornithia", "Telluraves")
+
+JT_ListofJarvisSplits
+
+
+## seperate the conflicts ---- for Prum et al. only! 10/05/21
+
+PT_Galloanseres <- filter(ALL_PT_CF_merged, ID=="63") # galloanseres as control "H0"
+
+PT_Columbea <- filter(ALL_PT_CF_merged, ID == "36") #columbaves split "H1"
+
+PT_Caprimulgiformes <- filter(ALL_PT_CF_merged, ID == "35") #swift split "H2"
+
+PT_Gruiformes <- filter(ALL_PT_CF_merged, ID == "39") # hoatzin split "H3"
+
+PT_Aequornithia <- filter(ALL_PT_CF_merged, ID == "38") #core water birds "H4"
+
+PT_Telluraves <- filter(ALL_PT_CF_merged, ID=="40") #Core land birds "H5"
+
+PT_ListofPrumSplits <- c("Galloanseres", "Columbea", "Caprimulgiformes", "Gruiformes", "Aequornithia", "Telluraves")
+
+
+PT_ListofPrumSplits
 
 
 
@@ -100,37 +132,14 @@ apply(ALL_JT_CF_merged, 2, function(x) any(is.na(x)))
 #  xlim(0, 45) +
 #  ylim(0, 70) + geom_text_repel()
 
+# combine the Jarvis splits
 
-
-## seperate the conflicts ---- reCHECK before 09/22/21
-
-Galloanseres <- filter(ALL_JT_CF_merged, ID=="35") # galloanseres as control "H0"
-
-Columbea <- filter(ALL_JT_CF_merged, ID=="36") #columbevas split "H1"
-
-Caprimulgiformes <- filter(ALL_JT_CF_merged, ID=="40") #swift split "H2"
-
-Gruiformes <- filter(ALL_JT_CF_merged, ID=="44") #Crane family (inc. hoatzin, split "H3")
-
-Aequornithia <- filter(ALL_JT_CF_merged, ID=="47") #Core water birds "H4"
-
-Telluraves <- filter(ALL_JT_CF_merged, ID=="53") #Core land birds "H5"
-
-#FulGla <- filter(ALLJT_CF_merged, ID=="37") # Flamingo 
-
-#Hoatzin_Gruiformes <- filter(ALLJT_CF_merged, ID=="45")
-
-ListofSplits <- c("Galloanseres", "Columbea", "Caprimulgiformes", "Gruiformes", "Aequornithia", "Telluraves")
-
-ListofSplits
-
-JT_Hs_Combined <- bind_rows("H0" = Galloanseres, 
-                        "H1" = Columbea,
-                        "H2" = Caprimulgiformes,
-                        "H3" = Gruiformes,
-                        "H4" = Aequornithia,
-                        "H5" = Telluraves, .id = "Split")
-
+JT_Hs_Combined <- bind_rows("H0" = JT_Galloanseres, 
+                        "H1" = JT_Columbea,
+                        "H2" = JT_Caprimulgiformes,
+                        "H3" = JT_Gruiformes,
+                        "H4" = JT_Aequornithia,
+                        "H5" = JT_Telluraves, .id = "Split")
 
 
 JT_Hs_Combined <- JT_Hs_Combined %>% mutate(SplitNAME = case_when(Split == "H0" ~ "Galloanseres",
@@ -140,6 +149,46 @@ JT_Hs_Combined <- JT_Hs_Combined %>% mutate(SplitNAME = case_when(Split == "H0" 
                                                                   Split == "H4" ~ "Aequornithia",
                                                                   Split == "H5" ~ "Telluraves"))
 
+# combine the Prum splits
+
+
+PT_Hs_Combined <- bind_rows("H0" = PT_Galloanseres, 
+                            "H1" = PT_Columbea,
+                            "H2" = PT_Caprimulgiformes,
+                            "H3" = PT_Gruiformes,
+                            "H4" = PT_Aequornithia,
+                            "H5" = PT_Telluraves, .id = "Split")
+
+
+PT_Hs_Combined <- PT_Hs_Combined %>% mutate(SplitNAME = case_when(Split == "H0" ~ "Galloanseres",
+                                                                  Split == "H1" ~ "Columbea",
+                                                                  Split == "H2" ~ "Caprimulgiformes",
+                                                                  Split == "H3" ~ "Gruiformes",
+                                                                  Split == "H4" ~ "Aequornithia",
+                                                                  Split == "H5" ~ "Telluraves"))
+
+
+# treemap for summary
+
+
+summary_sequence_data <- 
+
+
+treemap(ALL_JT_CF_merged,
+        index = "Data_Type",
+        vSize = "sN",
+        type = "index",
+        title = "",
+        palette = "Dark2",
+        border.col = c("black"),
+        border.lwds = 1,
+        fontsize.labels = 0.5,
+        fontcolor.labels = c("white"),
+        fontface.labels = 1,
+        bg.labels = "transparent",
+        align.labels = c("left", "top"),
+        overlap.labels = 0.5,
+        inflate.labels = F)
 
 
 # Plot all by DataType 
@@ -161,36 +210,88 @@ JT_Hs_Combined <- JT_Hs_Combined %>% mutate(SplitNAME = case_when(Split == "H0" 
 # plot for each sCF
 
 
-#version 1:
+#version 1 Jarvis et al.:
 
 
-# g <- ggplot(ALL_JT_CF_merged, aes(x = ID, y =sCF, color = Data_Type))
+JT_g1 <- ggplot(ALL_JT_CF_merged, aes(x = ID, y =sCF, color = Data_Type))
 
-#  <- g + geom_point(size = 2) +
-#  scale_x_continuous(breaks = unique(c(ALL_JT_CF_merged$ID)), limits = c(35, 63)) +
-#  scale_y_continuous(breaks = seq(0, 99, 20), 
-#                     limits=c(15, 80)) + labs(title = "sCF values for each branch in bird phylogeny",
-#                                              color = "Data Types") +  theme_minimal()
+JT_g1  <- JT_g1 + geom_point(size = 2) +
+  scale_x_continuous(breaks = unique(c(ALL_JT_CF_merged$ID)), limits = c(35, 63)) +
+  scale_y_continuous(breaks = seq(0, 99, 20), 
+                     limits=c(15, 80)) + labs(title = "sCF values for each branch in bird phylogeny",
+                                              color = "Data Types") +  theme_grey()
 
-
-#Version 2
-
-
-ALL_JT_CF_merged$ID <- as.factor(ALL_JT_CF_merged$ID)
+JT_g1
 
 
-g <- ggplot(ALL_JT_CF_merged, aes(x=ID, y=sCF, fill = Data_Type)) + scale_y_continuous(breaks = seq(0, 99, 33), 
-                                                                                         limits=c(0, 99))
+# version 1 Jarvis et al, with the brackets:
 
-g <- g + geom_dotplot(binaxis = "y", stackdir = "center", binpositions = "all", stackratio = 0.9, dotsize = 2) +
-  labs(title = "Site concordonce factors (sCF) by data type",
-       tag = "Figure 1",
-       x = "Branch ID",
+JT_g1 <- ggplot(ALL_JT_CF_merged, aes(x = ID, y =sCF, color = Data_Type)) +
+  geom_point(position=position_jitter(width=0.3)) +
+  scale_x_continuous(breaks = seq(35, 63, 1)) +
+  scale_y_continuous(breaks = seq(0, 99, 33), limits=c(10, 66), sec.axis=dup_axis()) +
+  coord_flex_cart(bottom=brackets_horizontal(), 
+                  top=brackets_horizontal(direction='down'),
+                  left=brackets_vertical(direction='right'), 
+                  right=brackets_vertical(direction='left')) + 
+  labs(title = "Site Concordance Factors by data type in the bird phylogeny (Jarvis et al. 2014)",
+       color = "Data Types",
        y = "sCF (%)",
-       fill = "Data Type") + 
-  theme_grey()
+       x = "Branch ID") + theme_gray()
 
-g
+
+JT_g1
+
+
+#version 1 Prum et al.:
+
+
+PT_g1 <- ggplot(ALL_PT_CF_merged, aes(x = ID, y =sCF, color = Data_Type))
+
+PT_g1  <- PT_g1 + geom_point(size = 2) +
+  scale_x_continuous(breaks = unique(c(ALL_PT_CF_merged$ID)), limits = c(35, 63)) +
+  scale_y_continuous(breaks = seq(0, 99, 20), 
+                     limits=c(15, 80)) + labs(title = "sCF values for each branch in bird phylogeny",
+                                              color = "Data Types") +  theme_grey()
+
+PT_g1
+
+
+# version 1 Prum et al. with the bracet 
+
+PT_g1 <- ggplot(ALL_PT_CF_merged, aes(x = ID, y =sCF, color = Data_Type)) +
+  geom_point(position=position_jitter(width=0.3)) +
+  scale_x_continuous(breaks=seq(35,63),sec.axis=dup_axis()) +
+  scale_y_continuous(breaks = seq(0, 99, 20), limits=c(10, 80), sec.axis=dup_axis()) +
+  coord_flex_cart(bottom=brackets_horizontal(), 
+                  top=brackets_horizontal(direction='down'),
+                  left=brackets_vertical(direction='right'), 
+                  right=brackets_vertical(direction='left')) + 
+  labs(title = "sCF values for each branch in bird phylogeny (Prum et al. 2015)",
+       color = "Data Types") + theme_grey()
+  
+
+PT_g1
+
+
+
+#ALL_JT_CF_merged$ID <- as.factor(ALL_JT_CF_merged$ID)
+
+
+#JT_g1 <- ggplot(ALL_JT_CF_merged, aes(x=ID, y=sCF, fill = Data_Type)) + scale_y_continuous(breaks = seq(0, 99, 33), 
+ #                                                                                        limits=c(0, 99))
+
+#JT_g1 <- JT_g1 + geom_dotplot(binaxis = "y", stackdir = "center", binpositions = "all", stackratio = 0.9, dotsize = 2) +
+ # labs(title = "Site concordonce factors (sCF) by data type",
+  #     tag = "Figure 1",
+   #    x = "Branch ID",
+    #   y = "sCF (%)",
+     #  fill = "Data Type") + 
+  #theme_grey()
+
+#JT_g1
+
+
 
 
 # dotplot for H0-H1 hypotheses
@@ -209,251 +310,109 @@ g1 <- g1 + geom_dotplot(binaxis = "y", stackdir = "center", binpositions = "all"
 g1 
 
 
+# dotplot for H0-H1 hypotheses - bracet
+
+g1 <- ggplot(JT_Hs_Combined, aes(x=Split, color = Data_Type, y=sCF, shape = SplitNAME))
+
+g1 <- g1 + geom_point(position=position_jitter(width=0.3), size = 3) +
+  scale_x_discrete() +
+  scale_y_continuous(breaks = seq(0, 99, 33), limits=c(10, 80), sec.axis=dup_axis()) +
+  coord_flex_cart(bottom=brackets_horizontal(), 
+                  top=brackets_horizontal(direction='down'),
+                  left=brackets_vertical(direction='right'), 
+                  right=brackets_vertical(direction='left')) +
+  labs(title = "Site concordonce factors (sCF %) by data type for only H0-H1 hyphotheses \n (Jarvis et al. 2014)",
+       tag = "Figure 2",
+       x = "Split",
+       y = "sCF (%)") +
+  scale_shape_discrete(name  ="Splits",
+                       breaks= c("Galloanseres",
+                                 "Columbea",
+                                 "Caprimulgiformes",
+                                 "Gruiformes",
+                                 "Aequornithia",
+                                 "Telluraves"),
+                       labels= c("H0: Galloanseres",
+                       "H1: Columbea",
+                       "H2: Caprimulgiformes",
+                       "H3: Gruiformes",
+                       "H4: Aequornithia",
+                       "H5: Telluraves")) + 
+  
+  scale_colour_discrete(name = "Data Type",
+                        breaks = ListOfDataTypes,
+                        labels = ListOfDataTypes)
+  
+g1 
+
+
+
+ListOfJarvisSplits <- c(unique(JT_Hs_Combined$SplitNAME))
+ListOfDataTypes <- c(unique(JT_Hs_Combined$Data_Type))
+
 #  x axis = scf & y axis= split (vertical)
 
 
-
-g2 <- ggplot(JT_Hs_Combined, aes(x=sCF, fill = Data_Type, y=SplitNAME)) + scale_x_continuous(breaks = seq(0, 99, 33),
-                                                                                             limits=c(0, 99)) +
-  scale_y_discrete(limits = c("Caprimulgiformes", "Aequornithia", "Gruiformes", "Telluraves", "Columbea", "Galloanseres"))
+#g2 <- ggplot(JT_Hs_Combined, aes(x=sCF, fill = Data_Type, y=SplitNAME)) + scale_x_continuous(breaks = seq(0, 99, 33),
+ #                                                                                            limits=c(0, 99)) +
+ # scale_y_discrete(limits = c("Caprimulgiformes", "Aequornithia", "Gruiformes", "Telluraves", "Columbea", "Galloanseres"))
      
 
 
-g2 <- g2 + geom_dotplot(binaxis = "y", stackgroups = TRUE, binpositions="all", stackdir = "center") +
-  labs(title = "Site Concordonce factors (sCF) by data type - vertical",
-       tag = "Figure 2",
-       x = "sCF (%)",
-       y = "Split",
-       fill = "Data Type") + theme_grey() #theme(axis.text.x = element_text(angle = 90, hjust=1))
+#g2 <- g2 + geom_dotplot(binaxis = "y", stackgroups = TRUE, binpositions="all", stackdir = "center") +
+ # labs(title = "Site Concordonce factors (sCF) by data type - vertical",
+  #     tag = "Figure 2",
+   #    x = "sCF (%)",
+    #   y = "Split",
+     #  fill = "Data Type") + theme_grey() #theme(axis.text.x = element_text(angle = 90, hjust=1))
 
 
-g2
+#g2
 
 
 
+## Heatmap for all branches vertical
 
-## plot: x axis = split, y axis: Data type
-
-
-g3 <- ggplot(JT_Hs_Combined, aes(x= Split, y=Data_Type, fill = sCF))
-
-
-g3 <- g3 + geom_tile() + labs(title = "Site Concordonce factors (sCF) by data type for H0 - H1",
-     tag = "Figure 3",
-     x = "Split",
-     y = "Data Type",
-     fill = "sCF (%)")
+g3_heatmap <- ggplot(ALL_JT_CF_merged, aes(Data_Type, ID, fill=sCF)) + 
+  geom_tile() +
+  scale_y_continuous(breaks = seq(35,63,1)) + 
+  scale_x_discrete(breaks=c("CDS", "intron", "lnc_RNA", "other", "unannotated", "UTR")) + theme_minimal() +
+  labs(title = "Heatmap for Site concordonce factors (sCF) by data type in the bird phylogeny \n (Jarvis et al. 2014)",
+       tag = "Figure 3",
+       x = "Data Type",
+       y = "Branch ID",
+       fill = "sCF")
   
   
-g3
 
+g3_heatmap
 
-  
- # Bubble-dot
+## Heatmap for H0-H1 only horizontal
 
+g4_heatmap <- ggplot(JT_Hs_Combined, aes(Split, Data_Type, fill=sCF)) + 
+  geom_tile() +
+  scale_y_discrete() + 
+  scale_x_discrete() + theme_minimal() +
+  labs(title = "Heatmap for Site concordonce factors (sCF) by data type in the bird phylogeny \n (Jarvis et al. 2014)",
+       tag = "Figure 3",
+       x = "Splits",
+       y = "Data Type",
+       fill = "sCF")
 
-g4 <- 
-  
 
 
+g4_heatmap
 
-g4 <- ggplot(JT_Hs_Combined, aes(x=Split, fill = Data_Type, y=sCF))
 
-g1 <- g1 + geom_dotplot(binaxis = "y", stackdir = "center", binpositions = "all", stackratio = 0.5) + 
-  labs(title = "Site concordonce factors (sCF) by data type for only H0-H1 hyphotheses",
-       tag = "Figure 2",
-       x = "Split",
-       y = "sCF (%)",
-       fill = "Data Type") + theme_grey() + theme(axis.text.x = element_text(angle = 90, hjust=1))
 
 
 
 
-g4 
- 
 
 
 
-g4
 
 
-g
 
-g1
-
-g2
-
-g3
-
-g4
-
-
-# gDFP (disconcordant due paraphyly) for all branches
-
-
-g5 <- ggplot(ALL_JT_CF_merged, aes(x = ID, y=gDFP, color = Data_Type))
-
-
-g5 <- g5 + geom_point(size = 2) + scale_x_continuous(breaks = unique(c(ALL_JT_CF_merged$ID)), limits = c(35, 63)) +
-  scale_y_continuous(breaks = seq(0, 100, 10), 
-                     limits=c(0, 100)) + labs(title = "gDFP values for each branch in bird phylogeny",
-                                              color = "Data Types") +  theme_minimal()
-
-g5
-
-
-
-# gDFP for selected hyphotheses
-
-
-g6 <- ggplot(JT_Hs_Combined, aes(x=Split, fill = Data_Type, y=gDFP))
-
-
-g6 <- g6 + geom_point(size = 2) + scale_x_discrete() +
-  scale_y_continuous(breaks = seq(0, 100, 10), 
-                     limits=c(0, 100)) + labs(title = "gDFP values for each conflicted branch in bir phylogeny",
-                                              color = "Data Types") #+  theme_minimal()
-
-g6
-
-
-
-g2 <- 
-
-g2 <- g2 + geom_dotplot(binaxis = "y", stackdir = "center", binpositions="all")
-
-g2 
-
-
-
-
-
-
-#binaxis = "y", stackdir = "center"
-g2
-
-
-  
-  
-g 
-
-g1
-
-g2
-
-
-
-
-  
-
-binaxis = "y", stackdir = "center", binwidth = 1, aes(ID, sCF)) +
-  scale_x_continuous()
-#JarvisTree <- read.tree("../IQOutput/Jarvis/JarvisTree.nwk_CDS_concord.cf.tree")
-
-#plot(JarvisTree, show.edge.label = T)
-
-#edgelabels(JarvisTree)
-
-
-#gID_ALLCFD <- group_by(ALLJT_CF_merged, ID)
-
-
-
-
-
-PasserineClade <- filter(ALLJT_CF_merged, ID=="53")
-
-
-
-
-CombinedJHMinusOther <- CombinedJH %>% 
-
-#plot splits together
-
-
-## 
-
-sum(CombinedJHMinusOther$sCF_N)
-
-
-
-#combine data type together?
-
-CombinedPseuodege <- ALLJT_CF_merged %>% filter(Data_Type == "pseudogene")
-
-#testing ILS 
-
-JT_CF_CDS <- JT_CF_CDS %>% select(-(Label)) %>% subset(ID!="34")
-
-
-chisq = function(DF1, DF2, N){
-  tryCatch({
-    # converts percentages to counts, runs chisq, gets pvalue
-    chisq.test(c(round(DF1*N)/100, round(DF2*N)/100))$p.value
-  },
-  error = function(err) {
-    # errors come if you give chisq two zeros
-    # but here we're sure that there's no difference
-    return(1.0)
-  })
-}
-
-
-e = JT_CF_CDS %>% 
-  group_by(ID) %>%
-  mutate(gEF_p = chisq(gDF1, gDF2, gN)) %>%
-  mutate(sEF_p = chisq(sDF1, sDF2, sN))
-
-
-subset(data.frame(e), (gEF_p < 0.05 | sEF_p < 0.05))
-
-
-## Internode certainty 
-
-IC = function(CF, DF1, DF2, N){
-  
-  # convert to counts
-  X = CF * N / 100
-  Y = max(DF1, DF2) * N / 100
-  
-  pX = X/(X+Y)
-  pY = Y/(X+Y)
-  
-  IC = 1 + pX * log2(pX) +
-    pY * log2(pY)
-  
-  return(IC)
-}
-
-ICTable = e %>% 
-  group_by(ID) %>%
-  mutate(gIC = IC(gCF, gDF1, gDF2, gN)) %>%
-  mutate(sIC = IC(sCF, sDF1, sDF2, sN))
-
-
-ENT = function(CF, DF1, DF2, N){
-  CF = CF * N / 100
-  DF1 = DF1 * N / 100
-  DF2 = DF2 * N / 100
-  return(entropy(c(CF, DF1, DF2)))
-}
-
-ENTC = function(CF, DF1, DF2, N){
-  maxent = 1.098612
-  CF = CF * N / 100
-  DF1 = DF1 * N / 100
-  DF2 = DF2 * N / 100
-  ent = entropy(c(CF, DF1, DF2))
-  entc = 1 - (ent / maxent)
-  return(entc)
-}
-
-ICTable = ICTable %>% 
-  group_by(ID) %>%
-  mutate(sENT = ENT(sCF, sDF1, sDF2, sN)) %>%
-  mutate(sENTC = ENTC(sCF, sDF1, sDF2, sN))
-
-
-ggpairs(ICTable, columns = c(2, 11, 19, 20, 21, 22, 23, 24))
 
 
