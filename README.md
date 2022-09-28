@@ -27,3 +27,10 @@ will subset each taxons reads down to (10*Y)/X bases (~10X total coverage when s
 
  
  - 
+
+## Post-SISRS:
+
+Extracting and annotating contigs.
+
+- To be able to annotate the SISRS sites we needed to locate base pair site on 
+
