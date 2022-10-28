@@ -1,0 +1,60 @@
+IQ-TREE MPI multicore version 1.7-beta16 for Linux 64-bit built Nov 19 2020
+Developed by Bui Quang Minh, Nguyen Lam Tung, Olga Chernomor,
+Heiko Schmidt, Dominik Schrempf, Michael Woodhams.
+
+Host:    n068.cluster.com (AVX512, FMA3, 62 GB RAM)
+Command: iqtree-mpi -t ./Reference_Trees/JarvisFinalTree.nwk -s Alignments/Biallelic_5Mising_intron_NoGaps.phylip-relaxed --scf 100 --prefix J-INTRON-scf
+Seed:    555669 (Using SPRNG - Scalable Parallel Random Number Generator)
+Time:    Thu Mar  4 14:12:47 2021
+Kernel:  AVX+FMA - 1 threads (36 CPU cores detected)
+MPI:     1 processes
+
+HINT: Use -nt option to specify number of threads because your CPU has 36 cores!
+HINT: -nt AUTO will automatically determine the best number of threads to use.
+
+Reading alignment file Alignments/Biallelic_5Mising_intron_NoGaps.phylip-relaxed ... Phylip format detected
+Alignment most likely contains DNA/RNA sequences
+Alignment has 32 sequences with 334071 columns, 243175 distinct patterns
+334071 parsimony-informative, 0 singleton sites, 0 constant sites
+        Gap/Ambiguity  Composition  p-value
+   1  AnaPla    8.42%    passed     74.40%
+   2  ApaVit    6.15%    failed      0.00%
+   3  AptFor    3.70%    failed      0.00%
+   4  BalReg    2.76%    failed      0.00%
+   5  BucRhi    6.54%    failed      0.00%
+   6  CarCri    3.50%    failed      0.00%
+   7  ChaPel    6.04%    failed      0.00%
+   8  ChaVoc    2.26%    passed     19.95%
+   9  ChlMac    3.91%    failed      0.07%
+  10  ColLiv    5.29%    failed      0.00%
+  11  ColStr    7.82%    failed      0.00%
+  12  CorBra    8.46%    failed      0.00%
+  13  CucCan    5.68%    failed      0.35%
+  14  EurHel    4.89%    failed      0.00%
+  15  FalPer    4.43%    failed      0.00%
+  16  FulGla    2.16%    failed      0.00%
+  17  GalGal    5.16%    failed      0.00%
+  18  GavSte    2.83%    failed      0.00%
+  19  HalLeu    1.57%    failed      0.00%
+  20  LepDis    2.84%    failed      0.04%
+  21  MelUnd    6.11%    passed      6.65%
+  22  MerNub    6.50%    failed      0.00%
+  23  MesUni    5.20%    failed      0.00%
+  24  OpiHoa    2.90%    failed      0.00%
+  25  PelCri    2.23%    failed      0.00%
+  26  PhaLep    2.52%    failed      0.00%
+  27  PhoRub    2.31%    passed     15.71%
+  28  PicPub   14.75%    failed      0.00%
+  29  PteGut    4.37%    passed     97.36%
+  30  StrCam   12.83%    failed      0.00%
+  31  TauEry    2.76%    failed      0.01%
+  32  TytAlb    4.52%    failed      0.00%
+****  TOTAL     5.04%  27 sequences failed composition chi2 test (p-value<5%; df=3)
+Reading tree ./Reference_Trees/JarvisFinalTree.nwk ...
+rooted tree with 32 taxa and 63 branches
+Computing site concordance factor...
+16.661 sec
+Tree with concordance factors written to J-INTRON-scf.cf.tree
+Tree with branch IDs written to J-INTRON-scf.cf.branch
+Concordance factors per branch printed to J-INTRON-scf.cf.stat
+Date and Time: Thu Mar  4 14:13:05 2021

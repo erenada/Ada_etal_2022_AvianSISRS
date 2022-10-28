@@ -1,0 +1,60 @@
+IQ-TREE MPI multicore version 1.7-beta16 for Linux 64-bit built Nov 19 2020
+Developed by Bui Quang Minh, Nguyen Lam Tung, Olga Chernomor,
+Heiko Schmidt, Dominik Schrempf, Michael Woodhams.
+
+Host:    n068.cluster.com (AVX512, FMA3, 62 GB RAM)
+Command: iqtree-mpi -t ./Reference_Trees/PrumFinalTree.nwk -s Alignments/Biallelic_5Mising_smRNA_NoGaps.phylip-relaxed --scf 100 --prefix P-smRNA-scf
+Seed:    510056 (Using SPRNG - Scalable Parallel Random Number Generator)
+Time:    Thu Mar  4 14:56:04 2021
+Kernel:  AVX+FMA - 1 threads (36 CPU cores detected)
+MPI:     1 processes
+
+HINT: Use -nt option to specify number of threads because your CPU has 36 cores!
+HINT: -nt AUTO will automatically determine the best number of threads to use.
+
+Reading alignment file Alignments/Biallelic_5Mising_smRNA_NoGaps.phylip-relaxed ... Phylip format detected
+Alignment most likely contains DNA/RNA sequences
+Alignment has 32 sequences with 293 columns, 290 distinct patterns
+293 parsimony-informative, 0 singleton sites, 0 constant sites
+        Gap/Ambiguity  Composition  p-value
+   1  AnaPla    4.78%    passed     64.22%
+   2  ApaVit    2.73%    passed     96.48%
+   3  AptFor    1.37%    passed     99.06%
+   4  BalReg    2.05%    passed     76.77%
+   5  BucRhi    1.71%    passed     45.84%
+   6  CarCri    2.05%    passed     86.12%
+   7  ChaPel    6.48%    passed     85.37%
+   8  ChaVoc    3.41%    passed     90.13%
+   9  ChlMac    9.22%    passed     69.55%
+  10  ColLiv    2.39%    passed     92.55%
+  11  ColStr    3.75%    passed     63.10%
+  12  CorBra    5.12%    passed     53.30%
+  13  CucCan    2.39%    passed     94.32%
+  14  EurHel    5.12%    passed     50.74%
+  15  FalPer    1.37%    passed     56.53%
+  16  FulGla    2.05%    passed     90.83%
+  17  GalGal    3.41%    passed     84.55%
+  18  GavSte    1.71%    passed     97.49%
+  19  HalLeu    1.02%    passed     97.18%
+  20  LepDis    0.68%    passed     88.76%
+  21  MelUnd    3.41%    passed     97.07%
+  22  MerNub    3.07%    passed     80.55%
+  23  MesUni    3.41%    passed     46.92%
+  24  OpiHoa    1.02%    passed     70.13%
+  25  PelCri    2.05%    passed     88.95%
+  26  PhaLep    1.71%    passed     77.05%
+  27  PhoRub    2.39%    passed     80.42%
+  28  PicPub    7.85%    passed     88.84%
+  29  PteGut    4.78%    passed     98.76%
+  30  StrCam    9.56%    passed     99.27%
+  31  TauEry    0.34%    passed     92.81%
+  32  TytAlb    6.14%    passed     76.18%
+****  TOTAL     3.39%  0 sequences failed composition chi2 test (p-value<5%; df=3)
+Reading tree ./Reference_Trees/PrumFinalTree.nwk ...
+rooted tree with 32 taxa and 63 branches
+Computing site concordance factor...
+0.009 sec
+Tree with concordance factors written to P-smRNA-scf.cf.tree
+Tree with branch IDs written to P-smRNA-scf.cf.branch
+Concordance factors per branch printed to P-smRNA-scf.cf.stat
+Date and Time: Thu Mar  4 14:56:04 2021

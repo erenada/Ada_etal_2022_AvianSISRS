@@ -1,0 +1,42 @@
+# Concordance factor statistics
+# This file can be read in MS Excel or in R with command:
+#   tab=read.table('J-GENICOTHER-scf.cf.stat',header=TRUE)
+# Columns are tab-separated with following meaning:
+#   ID: Branch ID
+#   sCF: Site concordance factor (%) averaged over 100 quartets
+#   sDF1: Site discordance factor (%) for alternative quartet 1
+#   sDF2: Site discordance factor (%) for alternative quartet 2
+#   sN: Number of informative sites averaged over 100 quartets
+#   Label: Existing branch label
+#   Length: Branch length
+ID	sCF	sDF1	sDF2	sN	Label	Length
+34	NA	NA	NA	NA		13.0671
+35	60.15	19.55	20.31	1810.77		22.7881
+36	59.48	20.08	20.44	1558.74		19.3779
+37	34.63	36.13	29.24	861.14		1.0721
+38	36.54	32.21	31.25	772.39		2.5132
+39	34.58	32.33	33.09	969.37		3.9961
+40	31.87	33.13	35	1022.67		1.244
+41	32.95	33.05	34	1012.25		1.2111
+42	34.34	34.35	31.31	1040.07		1.8403
+43	32.78	34.06	33.16	937.11		2.6418
+44	35.6	33.13	31.27	861.35		1.2148
+45	34.22	32.61	33.17	815.3		0.806
+46	34.13	33.5	32.37	687.93		1.3532
+47	32.82	35.15	32.03	731.86		1.2911
+48	35.36	31.92	32.72	732.59		0.9182
+49	33.39	36.31	30.3	705.34		4.5043
+50	41.11	28.29	30.6	617.5		1.7245
+51	39.96	28.75	31.29	498.51		1.4487
+52	37.73	30.91	31.35	431.98		1.3657
+53	38.3	31.61	30.09	808.66		1.9684
+54	33.42	31.76	34.82	806.87		1.3723
+55	34.72	34.79	30.49	785.1		2.11
+56	39.16	30.57	30.26	968.87		5.5373
+57	32.78	32.01	35.21	749.23		0.7031
+58	32.44	36.9	30.66	692.12		1.1228
+59	35.04	32.17	32.79	857.24		1.7073
+60	36.2	28.34	35.46	937.32		1.37
+61	35.79	31.42	32.79	923.15		3.4763
+62	39.21	31.31	29.48	1061.27		3.1107
+63	35.8	33.18	31.03	1073.27		9.6431
