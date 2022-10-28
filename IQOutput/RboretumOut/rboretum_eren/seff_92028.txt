@@ -1,0 +1,11 @@
+Job ID: 92028
+Cluster: andromeda
+User/Group: aknyshov/schwartzlab
+State: COMPLETED (exit code 0)
+Nodes: 1
+Cores per node: 36
+CPU Utilized: 17:12:48
+CPU Efficiency: 2.00% of 35-19:57:36 core-walltime
+Job Wall-clock time: 23:53:16
+Memory Utilized: 130.76 GB
+Memory Efficiency: 26.15% of 500.00 GB

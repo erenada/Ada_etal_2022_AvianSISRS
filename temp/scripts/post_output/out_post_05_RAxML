@@ -1,0 +1,69 @@
+ - 373528 sites from 'alignment_bi_m0.phylip-relaxed' were reduced to 1251 gappless sites (Dataset: GalGal_SISRS_Biallelic_NoMissing_five_prime_UTR). A gap-free alignment file has been generated in /data/schwartzlab/bob/bird_SISRS/Post_SISRS_Processing/Annotations/SISRS/Alignments/GalGal_SISRS_Biallelic_NoMissing_five_prime_UTR_NoGaps.phylip-relaxed
+ - No informative gap positions were identified in the GalGal_SISRS_Biallelic_NoMissing_five_prime_UTR dataset. The gapless alignment can be used for both tree-building and site-split analyses.
+ - 373528 sites from 'alignment_bi_m0.phylip-relaxed' were reduced to 8041 gappless sites (Dataset: GalGal_SISRS_Biallelic_NoMissing_genic_other). A gap-free alignment file has been generated in /data/schwartzlab/bob/bird_SISRS/Post_SISRS_Processing/Annotations/SISRS/Alignments/GalGal_SISRS_Biallelic_NoMissing_genic_other_NoGaps.phylip-relaxed
+ - No informative gap positions were identified in the GalGal_SISRS_Biallelic_NoMissing_genic_other dataset. The gapless alignment can be used for both tree-building and site-split analyses.
+ - 373528 sites from 'alignment_bi_m0.phylip-relaxed' were reduced to 41804 gappless sites (Dataset: GalGal_SISRS_Biallelic_NoMissing_lnc_RNA). A gap-free alignment file has been generated in /data/schwartzlab/bob/bird_SISRS/Post_SISRS_Processing/Annotations/SISRS/Alignments/GalGal_SISRS_Biallelic_NoMissing_lnc_RNA_NoGaps.phylip-relaxed
+ - No informative gap positions were identified in the GalGal_SISRS_Biallelic_NoMissing_lnc_RNA dataset. The gapless alignment can be used for both tree-building and site-split analyses.
+ - 373528 sites from 'alignment_bi_m0.phylip-relaxed' were reduced to 907 gappless sites (Dataset: GalGal_SISRS_Biallelic_NoMissing_pseudogene). A gap-free alignment file has been generated in /data/schwartzlab/bob/bird_SISRS/Post_SISRS_Processing/Annotations/SISRS/Alignments/GalGal_SISRS_Biallelic_NoMissing_pseudogene_NoGaps.phylip-relaxed
+ - No informative gap positions were identified in the GalGal_SISRS_Biallelic_NoMissing_pseudogene dataset. The gapless alignment can be used for both tree-building and site-split analyses.
+ - 373528 sites from 'alignment_bi_m0.phylip-relaxed' were reduced to 152 gappless sites (Dataset: GalGal_SISRS_Biallelic_NoMissing_smRNA). A gap-free alignment file has been generated in /data/schwartzlab/bob/bird_SISRS/Post_SISRS_Processing/Annotations/SISRS/Alignments/GalGal_SISRS_Biallelic_NoMissing_smRNA_NoGaps.phylip-relaxed
+ - No informative gap positions were identified in the GalGal_SISRS_Biallelic_NoMissing_smRNA dataset. The gapless alignment can be used for both tree-building and site-split analyses.
+ - 373528 sites from 'alignment_bi_m0.phylip-relaxed' were reduced to 47425 gappless sites (Dataset: GalGal_SISRS_Biallelic_NoMissing_CDS). A gap-free alignment file has been generated in /data/schwartzlab/bob/bird_SISRS/Post_SISRS_Processing/Annotations/SISRS/Alignments/GalGal_SISRS_Biallelic_NoMissing_CDS_NoGaps.phylip-relaxed
+ - No informative gap positions were identified in the GalGal_SISRS_Biallelic_NoMissing_CDS dataset. The gapless alignment can be used for both tree-building and site-split analyses.
+ - 373528 sites from 'alignment_bi_m0.phylip-relaxed' were reduced to 170711 gappless sites (Dataset: GalGal_SISRS_Biallelic_NoMissing_gene). A gap-free alignment file has been generated in /data/schwartzlab/bob/bird_SISRS/Post_SISRS_Processing/Annotations/SISRS/Alignments/GalGal_SISRS_Biallelic_NoMissing_gene_NoGaps.phylip-relaxed
+ - No informative gap positions were identified in the GalGal_SISRS_Biallelic_NoMissing_gene dataset. The gapless alignment can be used for both tree-building and site-split analyses.
+ - 373528 sites from 'alignment_bi_m0.phylip-relaxed' were reduced to 144246 gappless sites (Dataset: GalGal_SISRS_Biallelic_NoMissing_intergenic). A gap-free alignment file has been generated in /data/schwartzlab/bob/bird_SISRS/Post_SISRS_Processing/Annotations/SISRS/Alignments/GalGal_SISRS_Biallelic_NoMissing_intergenic_NoGaps.phylip-relaxed
+ - No informative gap positions were identified in the GalGal_SISRS_Biallelic_NoMissing_intergenic dataset. The gapless alignment can be used for both tree-building and site-split analyses.
+ - 373528 sites from 'alignment_bi_m0.phylip-relaxed' were reduced to 108458 gappless sites (Dataset: GalGal_SISRS_Biallelic_NoMissing_intron). A gap-free alignment file has been generated in /data/schwartzlab/bob/bird_SISRS/Post_SISRS_Processing/Annotations/SISRS/Alignments/GalGal_SISRS_Biallelic_NoMissing_intron_NoGaps.phylip-relaxed
+ - No informative gap positions were identified in the GalGal_SISRS_Biallelic_NoMissing_intron dataset. The gapless alignment can be used for both tree-building and site-split analyses.
+ - 373528 sites from 'alignment_bi_m0.phylip-relaxed' were reduced to 8575 gappless sites (Dataset: GalGal_SISRS_Biallelic_NoMissing_three_prime_UTR). A gap-free alignment file has been generated in /data/schwartzlab/bob/bird_SISRS/Post_SISRS_Processing/Annotations/SISRS/Alignments/GalGal_SISRS_Biallelic_NoMissing_three_prime_UTR_NoGaps.phylip-relaxed
+ - No informative gap positions were identified in the GalGal_SISRS_Biallelic_NoMissing_three_prime_UTR dataset. The gapless alignment can be used for both tree-building and site-split analyses.
+ln: accessing `/data/schwartzlab/bob/bird_SISRS/SISRS_Run/alignment_bi_m0_nogap.phylip-relaxed': No such file or directory
+
+
+Using BFGS method to optimize GTR rate parameters, to disable this specify "--no-bfgs" 
+
+
+This is the RAxML Master Pthread
+
+This is RAxML Worker Pthread Number: 1
+
+This is RAxML Worker Pthread Number: 3
+
+This is RAxML Worker Pthread Number: 5
+
+This is RAxML Worker Pthread Number: 2
+
+This is RAxML Worker Pthread Number: 4
+
+This is RAxML Worker Pthread Number: 6
+
+This is RAxML Worker Pthread Number: 7
+
+This is RAxML Worker Pthread Number: 8
+
+This is RAxML Worker Pthread Number: 9
+
+This is RAxML Worker Pthread Number: 11
+
+This is RAxML Worker Pthread Number: 10
+
+This is RAxML Worker Pthread Number: 13
+
+This is RAxML Worker Pthread Number: 17
+
+This is RAxML Worker Pthread Number: 19
+
+This is RAxML Worker Pthread Number: 12
+
+This is RAxML Worker Pthread Number: 14
+
+This is RAxML Worker Pthread Number: 15
+
+This is RAxML Worker Pthread Number: 18
+
+This is RAxML Worker Pthread Number: 16
+
+
+This is RAxML version 8.2.11 released by Alexandros Stamatakis on June 2017.
+

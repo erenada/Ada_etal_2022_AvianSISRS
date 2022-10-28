@@ -1,0 +1,11 @@
+Job ID: 91063
+Cluster: andromeda
+User/Group: aknyshov/schwartzlab
+State: FAILED (exit code 1)
+Nodes: 1
+Cores per node: 36
+CPU Utilized: 06:31:19
+CPU Efficiency: 4.99% of 5-10:37:48 core-walltime
+Job Wall-clock time: 03:37:43
+Memory Utilized: 119.36 GB
+Memory Efficiency: 0.00% of 0.00 MB

@@ -1,0 +1,161 @@
+#NEXUS 
+[!
+Backbone trees analyzed in:
+	Reddy et al. Why do phylogenomic data sets yield conflicting trees? Data type influences 
+	the avian tree of life more than taxon sampling.
+
+This Nexus file contains six blocks. If it is executed in PAUP* it will echo the topologies
+of the 15 "backbone trees" (i.e., trees that only include major lineages) to the screen and
+then it will generate a neighbor-joining tree that clusters the 15 backbone trees using 
+symmetric  distances (Robinson-Foulds distances x 2) . 
+
+TAXA block #1:
+Taxa in the backbone trees. The orders for each taxon are listed as comments next to the
+taxon names.
+
+TREES block: 
+This block includes 15 backbone trees from this study (EB2) and from Jarvis et al. (2014), 
+Prum et al. (2015), and Suh et al. (2015):
+	1.  JarvisTENT
+	2.  Prum
+	3.  EB2
+	4.  JarvisWGT
+	5.  JarvisINTRON
+	6.  JarvisUCE
+	7.  EB2noncoding
+	8.  EB2noJAR
+	9.  EB2noJARnoFGB
+	10. JarvisC12
+	11. JarvisLOWVARex
+	12. PrumJARtaxset
+	13. Prum_noJAR
+	14. JarvisINDELS
+	15. SuhTE
+
+PAUP block #1:
+Echos the 15 backbone trees to the screen.
+
+TAXA block #2:
+The 15 backbone trees listed as taxa. 
+
+DISTANCES block:
+This is the symmetric distances among the 15 trees shown above.
+
+PAUP block #2:
+Generates the neighbor-joining "tree-of-trees".
+
+If you do not want to use PAUP* it is possible to copy the trees block into a separate 
+Nexus file for visualization in a program like FigTree.
+]
+
+Begin taxa;
+	DIMENSIONS NTAX=37;
+	TAXLABELS
+		Acanthisitta_chloris_genome 		[ Passeriformes ]
+		Anas_platyrhynchos_genome 			[ Anseriformes ]
+		Antrostomus_carolinensis_genome		[ Caprimulgiformes sensu stricto ]
+		Apaloderma_vittatum_genome			[ Trogoniformes ]
+		Aptenodytes_forsteri_genome			[ Sphenisciformes ]
+		Balearica_regulorum_gibbericeps_genome	[ Gruiformes ]
+		Buceros_rhinoceros_silvestris_genome	[ Bucerotiformes ]
+		Calypte_anna_genome					[ Caprimulgiformes (Apodiformes-Trochilidae) ]
+		Cariama_cristata_genome				[ Cariamiformes ]
+		Cathartes_aura_genome				[ Accipitriformes (Cathartidae) ]
+		Chaetura_pelagica_genome			[ Caprimulgiformes (Apodiformes-Apodidae) ]
+		Charadrius_vociferus_genome			[ Charadriiformes ]
+		Chlamydotis_macqueenii_genome		[ Otidiformes ]
+		Colius_striatus_genome				[ Coliiformes ]
+		Columba_livia_genome				[ Columbiformes ]
+		Cuculus_canorus_genome				[ Cuculiformes ]
+		Eurypyga_helias_genome				[ Eurypygiformes ]
+		Falco_peregrinus_genome				[ Falconiformes ]
+		Fulmarus_glacialis_genome			[ Procellariiformes ]
+		Gallus_gallus_genome				[ Galliformes ]
+		Gavia_stellata_genome				[ Gaviiformes ]
+		Haliaeetus_leucocephalus_genome		[ Accipitriformes (Accipitres) ]
+		Leptosomus_discolor_genome			[ Leptosomiformes ]
+		Merops_nubicus_genome				[ Coraciiformes ]
+		Mesitornis_unicolor_genome			[ Mesitornithiformes ]
+		Nestor_notabilis_genome				[ Psittaciformes ]
+		Opisthocomus_hoazin_genome			[ Opisthocomiformes ]
+		Pelecanus_crispus_genome			[ Pelecaniformes ]
+		Phaethon_lepturus_genome			[ Phaethontiformes ]
+		Phoenicopterus_ruber_genome			[ Phoenicopteriformes ]
+		Picoides_pubescens_genome			[ Piciformes ]
+		Podiceps_cristatus_genome			[ Podicipediformes ]
+		Pterocles_gutturalis_genome			[ Pterocliformes ]
+		Struthio_camelus_genome				[ Struthioniformes ]
+		Tauraco_erythrolophus_genome		[ Musophagiformes ]
+		Tinamus_guttatus_genome				[ Tinamiformes ]
+		Tyto_alba_genome					[ Strigiformes ]
+	;
+End;
+
+Begin trees;
+
+tree JarvisTENT = [&R] ((((((((((Acanthisitta_chloris_genome,Nestor_notabilis_genome),Falco_peregrinus_genome),Cariama_cristata_genome),(((((Apaloderma_vittatum_genome,(Buceros_rhinoceros_silvestris_genome,(Merops_nubicus_genome,Picoides_pubescens_genome))),Leptosomus_discolor_genome),Colius_striatus_genome),Tyto_alba_genome),(Cathartes_aura_genome,Haliaeetus_leucocephalus_genome))),((((Aptenodytes_forsteri_genome,Fulmarus_glacialis_genome),Pelecanus_crispus_genome),Gavia_stellata_genome),(Eurypyga_helias_genome,Phaethon_lepturus_genome))),((Balearica_regulorum_gibbericeps_genome,Charadrius_vociferus_genome),Opisthocomus_hoazin_genome)),((Antrostomus_carolinensis_genome,(Calypte_anna_genome,Chaetura_pelagica_genome)),((Chlamydotis_macqueenii_genome,Tauraco_erythrolophus_genome),Cuculus_canorus_genome))),((Columba_livia_genome,(Mesitornis_unicolor_genome,Pterocles_gutturalis_genome)),(Phoenicopterus_ruber_genome,Podiceps_cristatus_genome))),(Anas_platyrhynchos_genome,Gallus_gallus_genome)),(Struthio_camelus_genome,Tinamus_guttatus_genome));
+tree Prum       = [&R] ((((((((((((Acanthisitta_chloris_genome,Nestor_notabilis_genome),Falco_peregrinus_genome),Cariama_cristata_genome),((((Apaloderma_vittatum_genome,(Buceros_rhinoceros_silvestris_genome,(Merops_nubicus_genome,Picoides_pubescens_genome))),Leptosomus_discolor_genome),Colius_striatus_genome),Tyto_alba_genome)),(Cathartes_aura_genome,Haliaeetus_leucocephalus_genome)),Opisthocomus_hoazin_genome),(((((Aptenodytes_forsteri_genome,Fulmarus_glacialis_genome),Pelecanus_crispus_genome),Gavia_stellata_genome),(Eurypyga_helias_genome,Phaethon_lepturus_genome)),(Charadrius_vociferus_genome,(Phoenicopterus_ruber_genome,Podiceps_cristatus_genome)))),Balearica_regulorum_gibbericeps_genome),(((Chlamydotis_macqueenii_genome,Cuculus_canorus_genome),Tauraco_erythrolophus_genome),(Columba_livia_genome,(Mesitornis_unicolor_genome,Pterocles_gutturalis_genome)))),(Antrostomus_carolinensis_genome,(Calypte_anna_genome,Chaetura_pelagica_genome))),(Anas_platyrhynchos_genome,Gallus_gallus_genome)),(Struthio_camelus_genome,Tinamus_guttatus_genome));
+tree EB2        = [&R] ((((((((((((Acanthisitta_chloris_genome,Nestor_notabilis_genome),Falco_peregrinus_genome),Cariama_cristata_genome),(((((Apaloderma_vittatum_genome,(Buceros_rhinoceros_silvestris_genome,(Merops_nubicus_genome,Picoides_pubescens_genome))),Leptosomus_discolor_genome),Colius_striatus_genome),Tyto_alba_genome),(Cathartes_aura_genome,Haliaeetus_leucocephalus_genome))),(Eurypyga_helias_genome,Phaethon_lepturus_genome)),(Antrostomus_carolinensis_genome,(Calypte_anna_genome,Chaetura_pelagica_genome))),Opisthocomus_hoazin_genome),Charadrius_vociferus_genome),(((((Aptenodytes_forsteri_genome,Fulmarus_glacialis_genome),Pelecanus_crispus_genome),Gavia_stellata_genome),(Balearica_regulorum_gibbericeps_genome,Tauraco_erythrolophus_genome)),(Chlamydotis_macqueenii_genome,Cuculus_canorus_genome))),((Columba_livia_genome,(Mesitornis_unicolor_genome,Pterocles_gutturalis_genome)),(Phoenicopterus_ruber_genome,Podiceps_cristatus_genome))),(Anas_platyrhynchos_genome,Gallus_gallus_genome)),(Struthio_camelus_genome,Tinamus_guttatus_genome));
+
+[ Other trees primarily (or exclusively) based on non-coding data ]
+tree JarvisWGT     = [&R] (((((((((((Acanthisitta_chloris_genome,Nestor_notabilis_genome),Falco_peregrinus_genome),Cariama_cristata_genome),(((((Apaloderma_vittatum_genome,(Buceros_rhinoceros_silvestris_genome,(Merops_nubicus_genome,Picoides_pubescens_genome))),Leptosomus_discolor_genome),Colius_striatus_genome),Tyto_alba_genome),(Cathartes_aura_genome,Haliaeetus_leucocephalus_genome))),Charadrius_vociferus_genome),((((Aptenodytes_forsteri_genome,Fulmarus_glacialis_genome),Pelecanus_crispus_genome),Gavia_stellata_genome),(Eurypyga_helias_genome,Phaethon_lepturus_genome))),(((Antrostomus_carolinensis_genome,(Calypte_anna_genome,Chaetura_pelagica_genome)),Balearica_regulorum_gibbericeps_genome),Opisthocomus_hoazin_genome)),((Chlamydotis_macqueenii_genome,Tauraco_erythrolophus_genome),Cuculus_canorus_genome)),((Columba_livia_genome,(Mesitornis_unicolor_genome,Pterocles_gutturalis_genome)),(Phoenicopterus_ruber_genome,Podiceps_cristatus_genome))),(Anas_platyrhynchos_genome,Gallus_gallus_genome)),(Struthio_camelus_genome,Tinamus_guttatus_genome));
+tree JarvisINTRON  = [&R] ((((((((((((Acanthisitta_chloris_genome,Nestor_notabilis_genome),Falco_peregrinus_genome),Cariama_cristata_genome),(((((Apaloderma_vittatum_genome,(Buceros_rhinoceros_silvestris_genome,(Merops_nubicus_genome,Picoides_pubescens_genome))),Leptosomus_discolor_genome),Colius_striatus_genome),Tyto_alba_genome),(Cathartes_aura_genome,Haliaeetus_leucocephalus_genome))),(Eurypyga_helias_genome,Phaethon_lepturus_genome)),(((Aptenodytes_forsteri_genome,Fulmarus_glacialis_genome),Pelecanus_crispus_genome),Gavia_stellata_genome)),(Balearica_regulorum_gibbericeps_genome,Charadrius_vociferus_genome)),((Antrostomus_carolinensis_genome,(Calypte_anna_genome,Chaetura_pelagica_genome)),Opisthocomus_hoazin_genome)),((Chlamydotis_macqueenii_genome,Tauraco_erythrolophus_genome),Cuculus_canorus_genome)),((Columba_livia_genome,(Mesitornis_unicolor_genome,Pterocles_gutturalis_genome)),(Phoenicopterus_ruber_genome,Podiceps_cristatus_genome))),(Anas_platyrhynchos_genome,Gallus_gallus_genome)),(Struthio_camelus_genome,Tinamus_guttatus_genome));
+tree JarvisUCE     = [&R] ((((((((((((Acanthisitta_chloris_genome,Nestor_notabilis_genome),Falco_peregrinus_genome),Cariama_cristata_genome),(((((Apaloderma_vittatum_genome,(Buceros_rhinoceros_silvestris_genome,(Merops_nubicus_genome,Picoides_pubescens_genome))),Leptosomus_discolor_genome),Tyto_alba_genome),(Cathartes_aura_genome,Haliaeetus_leucocephalus_genome)),Colius_striatus_genome)),(Eurypyga_helias_genome,Phaethon_lepturus_genome)),((Antrostomus_carolinensis_genome,(Calypte_anna_genome,Chaetura_pelagica_genome)),(((Aptenodytes_forsteri_genome,Fulmarus_glacialis_genome),Pelecanus_crispus_genome),Gavia_stellata_genome))),((Balearica_regulorum_gibbericeps_genome,Charadrius_vociferus_genome),Opisthocomus_hoazin_genome)),((Chlamydotis_macqueenii_genome,Tauraco_erythrolophus_genome),Cuculus_canorus_genome)),(Columba_livia_genome,(Mesitornis_unicolor_genome,Pterocles_gutturalis_genome))),(Phoenicopterus_ruber_genome,Podiceps_cristatus_genome)),(Anas_platyrhynchos_genome,Gallus_gallus_genome)),(Struthio_camelus_genome,Tinamus_guttatus_genome));
+tree EB2noncoding  = [&R] ((((((((((((Acanthisitta_chloris_genome,Nestor_notabilis_genome),Falco_peregrinus_genome),Cariama_cristata_genome),(((((Apaloderma_vittatum_genome,(Buceros_rhinoceros_silvestris_genome,(Merops_nubicus_genome,Picoides_pubescens_genome))),Leptosomus_discolor_genome),Colius_striatus_genome),Tyto_alba_genome),(Cathartes_aura_genome,Haliaeetus_leucocephalus_genome))),(Eurypyga_helias_genome,Phaethon_lepturus_genome)),(Antrostomus_carolinensis_genome,(Calypte_anna_genome,Chaetura_pelagica_genome))),Opisthocomus_hoazin_genome),Charadrius_vociferus_genome),((((((Aptenodytes_forsteri_genome,Fulmarus_glacialis_genome),Pelecanus_crispus_genome),Gavia_stellata_genome),Tauraco_erythrolophus_genome),Balearica_regulorum_gibbericeps_genome),(Chlamydotis_macqueenii_genome,Cuculus_canorus_genome))),(Columba_livia_genome,((Mesitornis_unicolor_genome,Pterocles_gutturalis_genome),(Phoenicopterus_ruber_genome,Podiceps_cristatus_genome)))),(Anas_platyrhynchos_genome,Gallus_gallus_genome)),(Struthio_camelus_genome,Tinamus_guttatus_genome));
+tree EB2noJAR      = [&R] ((((((((Acanthisitta_chloris_genome,Nestor_notabilis_genome),Falco_peregrinus_genome),Cariama_cristata_genome),((((Apaloderma_vittatum_genome,(Buceros_rhinoceros_silvestris_genome,(Merops_nubicus_genome,Picoides_pubescens_genome))),Leptosomus_discolor_genome),(Colius_striatus_genome,Haliaeetus_leucocephalus_genome)),(Cathartes_aura_genome,Tyto_alba_genome))),(Eurypyga_helias_genome,Phaethon_lepturus_genome)),(((Antrostomus_carolinensis_genome,(Calypte_anna_genome,Chaetura_pelagica_genome)),(Columba_livia_genome,((Mesitornis_unicolor_genome,Pterocles_gutturalis_genome),(Phoenicopterus_ruber_genome,Podiceps_cristatus_genome)))),(((((((Aptenodytes_forsteri_genome,Fulmarus_glacialis_genome),Pelecanus_crispus_genome),Gavia_stellata_genome),(Balearica_regulorum_gibbericeps_genome,Tauraco_erythrolophus_genome)),Cuculus_canorus_genome),(Chlamydotis_macqueenii_genome,Opisthocomus_hoazin_genome)),Charadrius_vociferus_genome))),(Anas_platyrhynchos_genome,Gallus_gallus_genome)),(Struthio_camelus_genome,Tinamus_guttatus_genome));
+tree EB2noJARnoFGB = [&R] (((((((((((((Acanthisitta_chloris_genome,Nestor_notabilis_genome),Falco_peregrinus_genome),Cariama_cristata_genome),((((Apaloderma_vittatum_genome,(Buceros_rhinoceros_silvestris_genome,(Merops_nubicus_genome,Picoides_pubescens_genome))),Leptosomus_discolor_genome),(Colius_striatus_genome,Haliaeetus_leucocephalus_genome)),(Cathartes_aura_genome,Tyto_alba_genome))),(Balearica_regulorum_gibbericeps_genome,(Eurypyga_helias_genome,Phaethon_lepturus_genome))),(Antrostomus_carolinensis_genome,(Calypte_anna_genome,Chaetura_pelagica_genome))),Opisthocomus_hoazin_genome),((((Aptenodytes_forsteri_genome,Fulmarus_glacialis_genome),Pelecanus_crispus_genome),Gavia_stellata_genome),Charadrius_vociferus_genome)),Tauraco_erythrolophus_genome),(Chlamydotis_macqueenii_genome,Cuculus_canorus_genome)),(Columba_livia_genome,((Mesitornis_unicolor_genome,Pterocles_gutturalis_genome),(Phoenicopterus_ruber_genome,Podiceps_cristatus_genome)))),(Anas_platyrhynchos_genome,Gallus_gallus_genome)),(Struthio_camelus_genome,Tinamus_guttatus_genome));
+
+[ Other trees primarily (or exclusively) based on non-coding data ]
+tree JarvisC12      = [&R] (((((((((((Acanthisitta_chloris_genome,Nestor_notabilis_genome),Colius_striatus_genome),((Apaloderma_vittatum_genome,(Buceros_rhinoceros_silvestris_genome,(Merops_nubicus_genome,Picoides_pubescens_genome))),Leptosomus_discolor_genome)),(Cariama_cristata_genome,Falco_peregrinus_genome)),((Cathartes_aura_genome,Haliaeetus_leucocephalus_genome),Tyto_alba_genome)),(((((Aptenodytes_forsteri_genome,Fulmarus_glacialis_genome),Pelecanus_crispus_genome),Gavia_stellata_genome),((Eurypyga_helias_genome,Phaethon_lepturus_genome),(Phoenicopterus_ruber_genome,Podiceps_cristatus_genome))),(Balearica_regulorum_gibbericeps_genome,Charadrius_vociferus_genome))),((Chlamydotis_macqueenii_genome,Tauraco_erythrolophus_genome),Opisthocomus_hoazin_genome)),((Columba_livia_genome,Cuculus_canorus_genome),(Mesitornis_unicolor_genome,Pterocles_gutturalis_genome))),(Antrostomus_carolinensis_genome,(Calypte_anna_genome,Chaetura_pelagica_genome))),(Anas_platyrhynchos_genome,Gallus_gallus_genome)),(Struthio_camelus_genome,Tinamus_guttatus_genome));
+tree JarvisLOWVARex = [&R] (((((((((((Acanthisitta_chloris_genome,Nestor_notabilis_genome),Falco_peregrinus_genome),(Cariama_cristata_genome,Colius_striatus_genome)),((Apaloderma_vittatum_genome,(Buceros_rhinoceros_silvestris_genome,(Merops_nubicus_genome,Picoides_pubescens_genome))),Leptosomus_discolor_genome)),((Cathartes_aura_genome,Haliaeetus_leucocephalus_genome),Tyto_alba_genome)),((((((Aptenodytes_forsteri_genome,Fulmarus_glacialis_genome),Pelecanus_crispus_genome),Gavia_stellata_genome),((Eurypyga_helias_genome,Phaethon_lepturus_genome),(Phoenicopterus_ruber_genome,Podiceps_cristatus_genome))),(Balearica_regulorum_gibbericeps_genome,Charadrius_vociferus_genome)),(Opisthocomus_hoazin_genome,Tauraco_erythrolophus_genome))),((Chlamydotis_macqueenii_genome,Mesitornis_unicolor_genome),Pterocles_gutturalis_genome)),(Columba_livia_genome,Cuculus_canorus_genome)),(Antrostomus_carolinensis_genome,(Calypte_anna_genome,Chaetura_pelagica_genome))),(Anas_platyrhynchos_genome,Gallus_gallus_genome)),(Struthio_camelus_genome,Tinamus_guttatus_genome));
+tree PrumJARtaxset  = [&R] (((((((((((((Acanthisitta_chloris_genome,Nestor_notabilis_genome),Falco_peregrinus_genome),Cariama_cristata_genome),(((Apaloderma_vittatum_genome,(Buceros_rhinoceros_silvestris_genome,(Merops_nubicus_genome,Picoides_pubescens_genome))),Leptosomus_discolor_genome),(Colius_striatus_genome,Tyto_alba_genome))),(Cathartes_aura_genome,Haliaeetus_leucocephalus_genome)),(((((Aptenodytes_forsteri_genome,Fulmarus_glacialis_genome),Pelecanus_crispus_genome),Gavia_stellata_genome),(Eurypyga_helias_genome,Phaethon_lepturus_genome)),(Charadrius_vociferus_genome,(Phoenicopterus_ruber_genome,Podiceps_cristatus_genome)))),Balearica_regulorum_gibbericeps_genome),(Opisthocomus_hoazin_genome,Tauraco_erythrolophus_genome)),(Chlamydotis_macqueenii_genome,Cuculus_canorus_genome)),(Antrostomus_carolinensis_genome,(Calypte_anna_genome,Chaetura_pelagica_genome))),(Columba_livia_genome,(Mesitornis_unicolor_genome,Pterocles_gutturalis_genome))),(Anas_platyrhynchos_genome,Gallus_gallus_genome)),(Struthio_camelus_genome,Tinamus_guttatus_genome));
+tree Prum_noJAR     = [&R] ((((((((((((Acanthisitta_chloris_genome,Nestor_notabilis_genome),Falco_peregrinus_genome),Cariama_cristata_genome),(((Apaloderma_vittatum_genome,(Buceros_rhinoceros_silvestris_genome,(Merops_nubicus_genome,Picoides_pubescens_genome))),Leptosomus_discolor_genome),Colius_striatus_genome)),((Cathartes_aura_genome,Haliaeetus_leucocephalus_genome),Tyto_alba_genome)),(Eurypyga_helias_genome,Phaethon_lepturus_genome)),((((Aptenodytes_forsteri_genome,Fulmarus_glacialis_genome),Pelecanus_crispus_genome),Gavia_stellata_genome),((Charadrius_vociferus_genome,(Phoenicopterus_ruber_genome,Podiceps_cristatus_genome)),Opisthocomus_hoazin_genome))),(Balearica_regulorum_gibbericeps_genome,Tauraco_erythrolophus_genome)),((Chlamydotis_macqueenii_genome,Cuculus_canorus_genome),(Columba_livia_genome,(Mesitornis_unicolor_genome,Pterocles_gutturalis_genome)))),(Antrostomus_carolinensis_genome,(Calypte_anna_genome,Chaetura_pelagica_genome))),(Anas_platyrhynchos_genome,Gallus_gallus_genome)),(Struthio_camelus_genome,Tinamus_guttatus_genome));
+
+[ Trees based on rare genomic changes ]
+tree JarvisINDELS = [&R] (((((((((((((Acanthisitta_chloris_genome,Nestor_notabilis_genome),Falco_peregrinus_genome),Cariama_cristata_genome),(((((Apaloderma_vittatum_genome,(Buceros_rhinoceros_silvestris_genome,(Merops_nubicus_genome,Picoides_pubescens_genome))),Leptosomus_discolor_genome),Colius_striatus_genome),Tyto_alba_genome),(Cathartes_aura_genome,Haliaeetus_leucocephalus_genome))),(Eurypyga_helias_genome,Phaethon_lepturus_genome)),Opisthocomus_hoazin_genome),(Antrostomus_carolinensis_genome,(Calypte_anna_genome,Chaetura_pelagica_genome))),((((Aptenodytes_forsteri_genome,Fulmarus_glacialis_genome),Pelecanus_crispus_genome),Gavia_stellata_genome),Charadrius_vociferus_genome)),Balearica_regulorum_gibbericeps_genome),((Chlamydotis_macqueenii_genome,Tauraco_erythrolophus_genome),Cuculus_canorus_genome)),(Columba_livia_genome,((Mesitornis_unicolor_genome,Pterocles_gutturalis_genome),(Phoenicopterus_ruber_genome,Podiceps_cristatus_genome)))),(Anas_platyrhynchos_genome,Gallus_gallus_genome)),(Struthio_camelus_genome,Tinamus_guttatus_genome));
+tree SuhTE        = [&R] (((((((((((Acanthisitta_chloris_genome,Nestor_notabilis_genome),Falco_peregrinus_genome),Cariama_cristata_genome),(((((Apaloderma_vittatum_genome,(Buceros_rhinoceros_silvestris_genome,(Merops_nubicus_genome,Picoides_pubescens_genome))),Leptosomus_discolor_genome),Tyto_alba_genome),(Cathartes_aura_genome,Haliaeetus_leucocephalus_genome)),Colius_striatus_genome)),(Balearica_regulorum_gibbericeps_genome,Opisthocomus_hoazin_genome)),(((Antrostomus_carolinensis_genome,(Calypte_anna_genome,Chaetura_pelagica_genome)),Charadrius_vociferus_genome),((((Aptenodytes_forsteri_genome,Fulmarus_glacialis_genome),Pelecanus_crispus_genome),Gavia_stellata_genome),(Eurypyga_helias_genome,Phaethon_lepturus_genome)))),((Chlamydotis_macqueenii_genome,Tauraco_erythrolophus_genome),(Columba_livia_genome,Cuculus_canorus_genome))),(Phoenicopterus_ruber_genome,Podiceps_cristatus_genome)),(Mesitornis_unicolor_genome,Pterocles_gutturalis_genome)),(Anas_platyrhynchos_genome,Gallus_gallus_genome)),(Struthio_camelus_genome,Tinamus_guttatus_genome));
+
+End;
+
+Begin PAUP;
+	[! ]
+	[! Show the 15 backbone trees ]
+	[! ]
+	showtrees all/;
+End;
+
+Begin taxa;
+	DIMENSIONS NTAX=15;
+	TAXLABELS
+		JarvisTENT  Prum  EB2  JarvisWGT  JarvisINTRON  JarvisUCE  EB2noncoding  EB2noJAR  EB2noJARnoFGB  JarvisC12  JarvisLOWVARex  PrumJARtaxset  Prum_noJAR  JarvisINDELS  SuhTE
+	;
+End;
+
+Begin Distances; [ symmetric (RF x 2) distances ]
+	Dimensions Newtaxa Ntax = 15;
+	Format Triangle=lower;
+Matrix
+JarvisTENT		0
+Prum			18	0
+EB2				16	20	0
+JarvisWGT		10	18	16	0
+JarvisINTRON	8	20	14	10	0
+JarvisUCE		14	24	20	16	12	0
+EB2noncoding	18	22	4	18	16	22	0
+EB2noJAR		26	30	20	26	24	26	20	0
+EB2noJARnoFGB	24	28	22	22	22	24	20	18	0
+JarvisC12		28	30	32	30	28	28	32	34	34	0
+JarvisLOWVARex	30	30	32	32	30	30	32	34	34	18	0
+PrumJARtaxset	22	14	22	22	24	26	24	30	28	30	28	0
+Prum_noJAR		24	16	18	24	22	24	22	26	28	26	24	20	0
+JarvisINDELS	14	22	14	12	10	16	12	22	18	30	32	26	24	0
+SuhTE			22	26	26	20	22	18	26	28	26	28	30	26	28	22	0
+	;
+End;
+
+Begin PAUP;
+	[! ]
+	[! Generating neighbor-joining "tree-of-trees" ]
+	nj;
+End;
+

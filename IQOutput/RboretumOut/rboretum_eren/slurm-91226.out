@@ -1,0 +1,39 @@
+[1] "load libs"
+Loading required package: ape
+Loading required package: phytools
+Loading required package: maps
+Loading required package: phangorn
+Loading required package: testit
+Loading required package: tidyverse
+── Attaching packages ─────────────────────────────────────── tidyverse 1.3.1 ──
+✔ ggplot2 3.3.5     ✔ purrr   0.3.4
+✔ tibble  3.1.5     ✔ dplyr   1.0.7
+✔ tidyr   1.1.4     ✔ stringr 1.4.0
+✔ readr   2.0.2     ✔ forcats 0.5.1
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+✖ purrr::map()    masks maps::map()
+Loading required package: tools
+Loading required package: reticulate
+Loading required package: scales
+
+Attaching package: ‘scales’
+
+The following object is masked from ‘package:purrr’:
+
+    discard
+
+The following object is masked from ‘package:readr’:
+
+    col_factor
+
+Loading required package: rlist
+Loading required package: BiocManager
+Bioconductor version '3.12' is out-of-date; the current release version '3.13'
+  is available with R version '4.1'; see https://bioconductor.org/install
+Loading required package: naturalsort
+[1] "prepping the loop..."
+[1] "processing CDS_concat"
+[1] "trees read; computing signal..."
+slurmstepd: error: *** JOB 91226 ON n095 CANCELLED AT 2021-10-12T11:47:32 ***

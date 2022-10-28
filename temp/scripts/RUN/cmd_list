@@ -1,0 +1,19 @@
+git clone https://github.com/BobLiterman/Literman_PhyloSignal.git #Commit: 90db23148a62557c67855c8d4cee536bbfe2395b
+
+python sisrs_01_folder_setup.py TaxonIDs
+
+#Manually calculated Subset_Scheme.csv from trim output values
+
+bash /data/schwartzlab/bob/bird_SISRS/scripts/RUN/read_subset.sh
+
+python sisrs_04_ray_composite.py 9 20
+
+#Run Ray script Jarvis_Bird_Ray.sh
+
+sisrs_05_setup_sisrs_Bluewaves.py 20 3 1
+
+#==== Site list created: 70126580 total sites ====
+
+# Run all SISRS scripts
+
+sbatch --mem=500GB run_output.sh

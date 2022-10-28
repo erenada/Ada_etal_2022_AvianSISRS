@@ -1,0 +1,6 @@
+Creating map dataset for whole genome...
+
+Complete genome map file for GalGal was created at /data/schwartzlab/bob/bird_SISRS/Post_SISRS_Processing/Whole_Genome_Mapping/WholeGenome_GalGal_Mapped.bed in 463s
+Building Bowtie2 Index for Reference Genome...
+
+bowtie2-build /data/schwartzlab/bob/bird_SISRS/Reference_Genome/Ens98_GalGal.4 /data/schwartzlab/bob/bird_SISRS/Reference_Genome/Ens98_GalGal -p 20
